@@ -1,6 +1,6 @@
 # Amastan official website
 
-GitHub: https://github.com/Kabdi-Kalboddine/Amastan-Website  
+GitHub: https://github.com/Kabdi-Kalboddine/Amastan-WEB  
 Live: https://amastansolution.com  
 
 This repository is the **marketing site** only. It is not the appliance (`swg-project`) and not the vendor SaaS (`Amastan-SAAS`). Do not commit `lab-agent.env`, classify JWTs, or Cloudflare tokens.
