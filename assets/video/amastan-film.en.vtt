@@ -1,0 +1,130 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:02.800
+Web security leaves teams with two choices:
+
+00:00:02.800 --> 00:00:05.400
+Allow everything or block everything.
+
+00:00:05.400 --> 00:00:06.900
+Both fail.
+
+00:00:06.920 --> 00:00:08.800
+People still need the web to work.
+
+00:00:08.800 --> 00:00:11.640
+They browse, search, and work every day.
+
+00:00:11.640 --> 00:00:14.440
+A simple allow-or-block choice breaks down.
+
+00:00:14.440 --> 00:00:17.560
+A normal work search starts with an ordinary web request.
+
+00:00:19.440 --> 00:00:21.120
+Binary control fails.
+
+00:00:21.120 --> 00:00:24.640
+The screen shows allow, block, and unknown.
+
+00:00:24.640 --> 00:00:28.440
+Unknown is allowed, while useful tools can be blocked.
+
+00:00:28.480 --> 00:00:30.400
+That is where the gap appears.
+
+00:00:30.400 --> 00:00:32.320
+That is where the leak can happen.
+
+00:00:32.320 --> 00:00:36.040
+Even an ordinary travel site is still a request.
+
+00:00:36.040 --> 00:00:38.680
+The request reaches the local network first.
+
+00:00:41.080 --> 00:00:44.320
+The gateway sees the traffic and records the action.
+
+00:00:44.320 --> 00:00:47.880
+The request moves through infrastructure the organization controls.
+
+00:00:47.880 --> 00:00:50.040
+Then it reaches the internet.
+
+00:00:50.040 --> 00:00:52.800
+Vendor-cloud inspection sends the log out.
+
+00:00:52.800 --> 00:00:54.760
+Trusted traffic is allowed.
+
+00:00:54.760 --> 00:00:58.840
+Unknown traffic is isolated before the session reaches the endpoint.
+
+00:00:58.840 --> 00:01:03.800
+The user keeps working, while the isolated session stays away from the endpoint.
+
+00:01:03.800 --> 00:01:06.040
+Amastan is more than a proxy.
+
+00:01:06.040 --> 00:01:11.720
+It is a self-hosted AI Secure Web Gateway, built to run in your VPC or data center.
+
+00:01:11.720 --> 00:01:15.280
+The decision and audit log stay on infrastructure you control.
+
+00:01:15.280 --> 00:01:18.960
+Classification can improve from traffic and feedback in that environment.
+
+00:01:18.960 --> 00:01:20.640
+Trusted traffic is allowed.
+
+00:01:20.640 --> 00:01:26.040
+An administrator can create a remote isolation session and test the URL requested by the user.
+
+00:01:26.080 --> 00:01:31.760
+The session runs remotely, keeping the web content away from the endpoint, while the user continues working.
+
+00:01:31.760 --> 00:01:33.360
+Dangerous traffic is blocked.
+
+00:01:35.160 --> 00:01:37.320
+Amastan is not your SIEM.
+
+00:01:37.320 --> 00:01:39.800
+Your SIEM collects and correlates the evidence.
+
+00:01:39.800 --> 00:01:43.280
+Amastan makes the web decision and feeds it the audit log.
+
+00:01:43.280 --> 00:01:45.680
+It is not your antivirus or EDR.
+
+00:01:45.680 --> 00:01:47.240
+Those protect the endpoint.
+
+00:01:47.240 --> 00:01:48.920
+It is not your factory firewall.
+
+00:01:48.920 --> 00:01:53.760
+Amastan focuses on HTTP and HTTPS content and web policy.
+
+00:01:53.760 --> 00:01:55.600
+And it is not your mail gateway.
+
+00:01:55.600 --> 00:01:59.520
+Amastan protects what happens when a user follows a link into the web.
+
+00:01:59.520 --> 00:02:01.920
+Amastan works alongside these controls,
+
+00:02:01.920 --> 00:02:05.680
+adding a dedicated layer of web security without replacing them.
+
+00:02:05.680 --> 00:02:07.440
+I am Qalbeddine.
+
+00:02:07.440 --> 00:02:11.960
+I build a system that decides what returns when people open a browser.
+
+00:02:11.960 --> 00:02:17.160
+If you need that control without it running in their data, Amastan is built for that.

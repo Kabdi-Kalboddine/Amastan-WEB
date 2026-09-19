@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Amastan — Self-hosted AI Secure Web Gateway</title>
+  <meta name="description" content="Self-hosted AI SWG — allow / block / RBI, with verdicts and logs on your infrastructure." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://amastansolution.com/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Amastan" />
+  <meta property="og:title" content="Amastan — Self-hosted AI Secure Web Gateway" />
+  <meta property="og:description" content="Self-hosted AI SWG — allow / block / RBI, with verdicts and logs on your infrastructure." />
+  <meta property="og:url" content="https://amastansolution.com/" />
+  <meta property="og:image" content="https://amastansolution.com/assets/brand/logo-mark.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Amastan — Self-hosted AI Secure Web Gateway" />
+  <meta name="twitter:description" content="Self-hosted AI SWG — allow / block / RBI, with verdicts and logs on your infrastructure." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="icon" href="assets/brand/logo-mark.png" type="image/png" />
+  <link rel="stylesheet" href="styles.css?v=respage1" />
+  <script>
+    (function () {
+      var t = localStorage.getItem("amastan_theme") || "dark";
+      document.documentElement.setAttribute("data-theme", t === "light" ? "light" : "dark");
+      var h = location.hash;
+      if (h === "#resources" || h === "#downloads") {
+        location.replace("resources.html" + h);
+      }
+    })();
+  </script>
+
+</head>
+<body>
+  <header class="topbar">
+    <div class="nav-backdrop" id="nav-backdrop" hidden></div>
+    <div class="wrap topbar-inner">
+      <a class="brand" href="index.html"><img class="brand-mark brand-mark-on-dark" src="assets/brand/logo-mark.png" alt="" width="40" height="47" /><img class="brand-mark brand-mark-on-light" src="assets/brand/logo-outline.png" alt="" width="40" height="46" /><span class="brand-text">Amastan</span><span class="brand-badge">AI-SWG</span></a>
+      <nav class="nav" id="primary-nav" aria-label="Primary">
+        <a href="use-cases.html" data-i18n="nav_usecases">Use cases</a>
+        <a href="pilot.html" data-i18n="nav_pilot">Pilot</a>
+        <a href="features.html" data-i18n="nav_features">Features</a>
+        <a href="what-is-swg.html" data-i18n="nav_learn">What is SWG</a>
+        <a href="check-url.html" data-i18n="nav_check">Check URL</a>
+        <a href="urls-checked.html" data-i18n="nav_checked">Checked</a>
+        <a href="about.html" data-i18n="nav_about">About</a>
+        <a href="resources.html" data-i18n="nav_downloads">Resources</a>
+        <a href="#contact" data-i18n="nav_contact">Contact</a>
+        <a class="btn btn-primary nav-cta" href="pilot.html" data-i18n="cta_pilot">Request a pilot</a>
+      </nav>
+      <div class="topbar-tools">
+        <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">
+          <span class="nav-toggle-bars" aria-hidden="true"><span></span><span></span><span></span></span>
+        </button>
+        <div class="lang-menu" id="lang-menu">
+          <button type="button" class="lang-toggle" id="lang-toggle" aria-expanded="false" aria-haspopup="listbox" aria-controls="lang-dropdown">EN</button>
+          <div class="lang-dropdown" id="lang-dropdown" role="listbox" hidden>
+            <button type="button" role="option" data-lang="en" class="active">EN</button>
+            <button type="button" role="option" data-lang="fr">FR</button>
+            <button type="button" role="option" data-lang="ar">AR</button>
+          </div>
+        </div>
+        <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle color theme">Dark</button>
+        <a class="btn btn-primary topbar-cta" href="pilot.html" data-i18n="nav_cta">Request a pilot</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero hero-full">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <h1 data-i18n="hero_title">Amastan</h1>
+          <p class="lead hero-edge" data-i18n="hero_edge"></p>
+          <div class="actions">
+            <a class="btn btn-primary" href="pilot.html" data-i18n="cta_pilot">Request a pilot</a>
+            <a class="btn btn-ghost" href="check-url.html" data-i18n="cta_check">Try Check URL</a>
+          </div>
+          <p class="hero-links">
+            <a href="#demo" data-i18n="cta_watch">Watch demo</a>
+            <span aria-hidden="true">·</span>
+            <a href="what-is-swg.html" data-i18n="nav_learn">What is SWG</a>
+          </p>
+        </div>
+        <div class="hero-visual">
+          <img src="assets/screens/01-dashboard.png" alt="Amastan operator dashboard" width="1024" height="576" />
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="problem">
+      <div class="wrap">
+        <h2 data-i18n="problem_title">The problem</h2>
+        <p class="section-lead" data-i18n="problem_lead"></p>
+        <div class="grid-3">
+          <article class="card">
+            <h3 data-i18n="prob_1_t"></h3>
+            <p data-i18n="prob_1_d"></p>
+          </article>
+          <article class="card">
+            <h3 data-i18n="prob_2_t"></h3>
+            <p data-i18n="prob_2_d"></p>
+          </article>
+          <article class="card">
+            <h3 data-i18n="prob_3_t"></h3>
+            <p data-i18n="prob_3_d"></p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="product">
+      <div class="wrap">
+        <h2 data-i18n="solution_title">Our solution</h2>
+        <p class="section-lead" data-i18n="solution_lead"></p>
+        <div class="grid-3">
+          <article class="card">
+            <h3 data-i18n="cap_1_t"></h3>
+            <p data-i18n="cap_1_d"></p>
+          </article>
+          <article class="card">
+            <h3 data-i18n="cap_2_t"></h3>
+            <p data-i18n="cap_2_d"></p>
+          </article>
+          <article class="card">
+            <h3 data-i18n="cap_3_t"></h3>
+            <p data-i18n="cap_3_d"></p>
+          </article>
+        </div>
+        <div class="steps" style="margin-top:1.5rem">
+          <div class="step"><b>1</b><span data-i18n="how_1"></span></div>
+          <div class="step"><b>2</b><span data-i18n="how_2"></span></div>
+          <div class="step"><b>3</b><span data-i18n="how_3"></span></div>
+          <div class="step"><b>4</b><span data-i18n="how_4"></span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="demo">
+      <div class="wrap">
+        <h2 data-i18n="demo_title">See it in action</h2>
+        <p class="section-lead" data-i18n="demo_lead"></p>
+        <div class="video-frame">
+          <video class="film-player" controls preload="metadata" playsinline poster="assets/video/amastan-film-poster.jpg">
+            <source src="assets/video/amastan-film.mp4" type="video/mp4" />
+            <track kind="subtitles" srclang="fr" label="Français" src="assets/video/amastan-film.fr.vtt" default />
+            <track kind="subtitles" srclang="en" label="English" src="assets/video/amastan-film.en.vtt" />
+          </video>
+        </div>
+        <h3 class="road-h" data-i18n="shots_title">Operator console</h3>
+        <div class="shot-grid">
+          <figure class="shot">
+            <button type="button" class="shot-open" data-full="assets/screens/01-dashboard.png" data-caption-key="shot_1" aria-label="Expand screenshot">
+              <img src="assets/screens/01-dashboard.png" alt="Dashboard overview" loading="lazy" />
+            </button>
+            <figcaption data-i18n="shot_1"></figcaption>
+          </figure>
+          <figure class="shot">
+            <button type="button" class="shot-open" data-full="assets/screens/02-traffic.png" data-caption-key="shot_2" aria-label="Expand screenshot">
+              <img src="assets/screens/02-traffic.png" alt="Traffic decisions" loading="lazy" />
+            </button>
+            <figcaption data-i18n="shot_2"></figcaption>
+          </figure>
+          <figure class="shot">
+            <button type="button" class="shot-open" data-full="assets/screens/03-block.png" data-caption-key="shot_3" aria-label="Expand screenshot">
+              <img src="assets/screens/03-block.png" alt="Block verdict" loading="lazy" />
+            </button>
+            <figcaption data-i18n="shot_3"></figcaption>
+          </figure>
+          <figure class="shot">
+            <button type="button" class="shot-open" data-full="assets/screens/04-policy.png" data-caption-key="shot_4" aria-label="Expand screenshot">
+              <img src="assets/screens/04-policy.png" alt="Edge policy" loading="lazy" />
+            </button>
+            <figcaption data-i18n="shot_4"></figcaption>
+          </figure>
+          <figure class="shot">
+            <button type="button" class="shot-open" data-full="assets/screens/05-grafana.png" data-caption-key="shot_5" aria-label="Expand screenshot">
+              <img src="assets/screens/05-grafana.png" alt="Observability" loading="lazy" />
+            </button>
+            <figcaption data-i18n="shot_5"></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="compare">
+      <div class="wrap">
+        <h2 data-i18n="compare_title">Amastan vs cloud SWG</h2>
+        <p class="section-lead" data-i18n="compare_lead"></p>
+        <div class="compare-table-wrap">
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th data-i18n="cmp_h_dim"></th>
+                <th data-i18n="cmp_h_cloud"></th>
+                <th data-i18n="cmp_h_us"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-i18n="cmp_1_d"></td>
+                <td data-i18n="cmp_1_c"></td>
+                <td class="win" data-i18n="cmp_1_u"></td>
+              </tr>
+              <tr>
+                <td data-i18n="cmp_2_d"></td>
+                <td data-i18n="cmp_2_c"></td>
+                <td class="win" data-i18n="cmp_2_u"></td>
+              </tr>
+              <tr>
+                <td data-i18n="cmp_3_d"></td>
+                <td data-i18n="cmp_3_c"></td>
+                <td class="win" data-i18n="cmp_3_u"></td>
+              </tr>
+              <tr>
+                <td data-i18n="cmp_4_d"></td>
+                <td data-i18n="cmp_4_c"></td>
+                <td class="win" data-i18n="cmp_4_u"></td>
+              </tr>
+              <tr>
+                <td data-i18n="cmp_5_d"></td>
+                <td data-i18n="cmp_5_c"></td>
+                <td class="win" data-i18n="cmp_5_u"></td>
+              </tr>
+              <tr>
+                <td data-i18n="cmp_6_d"></td>
+                <td data-i18n="cmp_6_c"></td>
+                <td class="win" data-i18n="cmp_6_u"></td>
+              </tr>
+              <tr>
+                <td data-i18n="cmp_7_d"></td>
+                <td class="win" data-i18n="cmp_7_c"></td>
+                <td data-i18n="cmp_7_u"></td>
+              </tr>
+              <tr>
+                <td data-i18n="cmp_8_d"></td>
+                <td class="win" data-i18n="cmp_8_c"></td>
+                <td data-i18n="cmp_8_u"></td>
+              </tr>
+              <tr>
+                <td data-i18n="cmp_9_d"></td>
+                <td data-i18n="cmp_9_c"></td>
+                <td class="win" data-i18n="cmp_9_u"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="compare-note" data-i18n="compare_note"></p>
+        <a class="btn btn-ghost" href="features.html" data-i18n="cta_features_full">Full features &amp; roadmap</a>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="wrap">
+        <h2 data-i18n="contact_title">Request a pilot</h2>
+        <p class="section-lead" data-i18n="contact_lead"></p>
+        <div class="contact-grid">
+          <form id="contact-form" novalidate>
+            <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" />
+            <label><span data-i18n="f_name"></span><input name="name" required autocomplete="name" /></label>
+            <label><span data-i18n="f_email"></span><input name="email" type="email" required autocomplete="email" /></label>
+            <label><span data-i18n="f_company"></span><input name="company" autocomplete="organization" /></label>
+            <label><span data-i18n="f_country"></span><input name="country" autocomplete="country-name" /></label>
+            <label><span data-i18n="f_interest"></span>
+              <select name="interest">
+                <option value="pilot" selected data-i18n="f_interest_pilot"></option>
+                <option value="vm" data-i18n="f_interest_vm"></option>
+                <option value="compute" data-i18n="f_interest_compute"></option>
+                <option value="support" data-i18n="f_interest_support"></option>
+                <option value="partner" data-i18n="f_interest_partner"></option>
+                <option value="features" data-i18n="f_interest_features"></option>
+                <option value="other" data-i18n="f_interest_other"></option>
+              </select>
+            </label>
+            <label><span data-i18n="f_message"></span><textarea name="message" rows="5" maxlength="5000"></textarea></label>
+            <p class="form-privacy"><a href="privacy.html" data-i18n="f_privacy_link">Privacy notice</a> — <span data-i18n="f_mail_note"></span></p>
+            <button class="btn btn-primary" type="submit" data-i18n="f_submit">Request a pilot</button>
+            <p class="form-msg" id="form-msg" role="status"></p>
+          </form>
+          <aside class="aside-box">
+            <p data-i18n="f_or_mail"></p>
+            <p><a href="mailto:kabdi.kalboddine@gmail.com?subject=Amastan%20pilot%20request">kabdi.kalboddine@gmail.com</a></p>
+            <p style="margin-top:1rem;color:var(--muted);font-size:0.9rem" data-i18n="f_mail_note"></p>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>
+        <a class="brand footer-brand" href="index.html"><img class="brand-mark brand-mark-on-dark" src="assets/brand/logo-mark.png" alt="" width="40" height="47" /><img class="brand-mark brand-mark-on-light" src="assets/brand/logo-outline.png" alt="" width="40" height="46" /><span class="brand-text">Amastan</span><span class="brand-badge">AI-SWG</span></a>
+        <p class="footer-tag" data-i18n="footer_tag">Self-hosted AI Secure Web Gateway</p>
+      </div>
+      <div>
+        <h4 data-i18n="footer_hq_label">Headquarters</h4>
+        <p data-i18n="footer_hq">Algiers, Algeria</p>
+      </div>
+      <div>
+        <h4 data-i18n="footer_contact_label">Contact</h4>
+        <p><a href="tel:+213660617078">+213 660 61 70 78</a></p>
+        <p><a href="mailto:kabdi.kalboddine@gmail.com">kabdi.kalboddine@gmail.com</a></p>
+      </div>
+      <div>
+        <h4 data-i18n="footer_links_label">Links</h4>
+        <div class="footer-links">
+          <a href="check-url.html" data-i18n="nav_check">Check URL</a>
+          <a href="urls-checked.html" data-i18n="nav_checked">Checked</a>
+          <a href="pilot.html" data-i18n="nav_pilot">Pilot</a>
+          <a href="about.html" data-i18n="nav_about">About</a>
+          <a href="what-is-swg.html" data-i18n="nav_learn">What is SWG</a>
+          <a href="privacy.html" data-i18n="nav_privacy">Privacy</a>
+        </div>
+      </div>
+    </div>
+    <div class="wrap footer-copy">
+      <p>© 2026 Amastan. <span data-i18n="footer_rights">All rights reserved.</span></p>
+    </div>
+  </footer>
+
+  <div class="lightbox" id="shot-lightbox" hidden>
+    <button type="button" class="lightbox-backdrop" id="shot-lightbox-backdrop" aria-label="Close"></button>
+    <div class="lightbox-dialog" role="dialog" aria-modal="true" aria-labelledby="shot-lightbox-caption">
+      <button type="button" class="lightbox-close" id="shot-lightbox-close" aria-label="Close">×</button>
+      <img id="shot-lightbox-img" alt="" />
+      <p class="lightbox-caption" id="shot-lightbox-caption"></p>
+    </div>
+  </div>
+
+  <script src="app.js?v=respage1"></script>
+</body>
+</html>

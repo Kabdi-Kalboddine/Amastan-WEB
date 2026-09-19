@@ -1,0 +1,27 @@
+# Secrets & local env
+*.env
+!*.env.example
+lab-agent.env
+.env*
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Cloudflare / wrangler local state
+.wrangler/
+node_modules/
+
+# Runtime / logs
+logs/
+*.log
+data/checked-history.json
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/

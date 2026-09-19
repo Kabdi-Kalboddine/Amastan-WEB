@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Amastan AI-SWG — Admin Guide</title>
+  <style>
+:root {
+  --navy: #00008a; --royal: #0075fd; --ink: #0b1440; --muted: #5b6b98;
+  --line: #d7e0f5; --soft: #f5f8ff; --win: #005fd1;
+}
+* { box-sizing: border-box; }
+body {
+  font-family: "Segoe UI", system-ui, sans-serif;
+  color: var(--ink);
+  max-width: 900px;
+  margin: 24px auto;
+  padding: 0 16px 40px;
+  line-height: 1.5;
+  font-size: 0.95rem;
+  background: #fff;
+}
+.tag { color: var(--royal); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 750; margin: 0 0 0.4rem; }
+h1 { font-size: 1.55rem; color: var(--navy); margin: 0 0 0.4rem; letter-spacing: -0.02em; line-height: 1.15; }
+.edge { font-weight: 650; margin: 0 0 1rem; max-width: 46rem; }
+h2 { font-size: 1.05rem; color: var(--navy); border-bottom: 1px solid var(--line); padding-bottom: 0.25rem; margin: 1.35rem 0 0.55rem; }
+h3 { font-size: 0.95rem; color: var(--navy); margin: 1rem 0 0.4rem; }
+p, li { margin: 0.35rem 0; }
+.muted { color: var(--muted); font-size: 0.85rem; }
+ul, ol { padding-inline-start: 1.2rem; }
+table { width: 100%; border-collapse: collapse; margin: 0.5rem 0 0.85rem; font-size: 0.86rem; }
+th, td { border: 1px solid var(--line); padding: 0.5rem 0.65rem; text-align: start; vertical-align: top; }
+th { background: linear-gradient(135deg, rgba(0,117,253,.10), rgba(68,244,180,.10)); color: var(--navy); font-weight: 750; }
+td:first-child { font-weight: 650; }
+code, pre { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.88em; }
+code { background: var(--soft); border: 1px solid var(--line); border-radius: 5px; padding: 0.05rem 0.35rem; }
+pre { background: #0b1440; color: #e8eefc; border-radius: 10px; padding: 0.85rem 1rem; overflow-x: auto; }
+.note { background: var(--soft); border: 1px solid var(--line); border-left: 4px solid var(--royal); border-radius: 0 10px 10px 0; padding: 0.7rem 0.9rem; margin: 0.7rem 0; }
+.badge { display: inline-block; font-size: 0.65rem; font-weight: 750; letter-spacing: .04em; text-transform: uppercase; color: var(--royal); background: rgba(0,117,253,.08); border: 1px solid rgba(0,117,253,.22); border-radius: 999px; padding: .05rem .4rem; }
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0.55rem; }
+.card { border: 1px solid var(--line); border-radius: 10px; padding: 0.6rem 0.75rem; background: #fff; }
+.card strong { display: block; color: var(--navy); margin-bottom: 0.15rem; }
+.card span { color: #334; font-size: 0.84rem; }
+.cta { margin-top: 1.2rem; padding: 0.8rem 0.95rem; background: linear-gradient(135deg, #eef4ff, #e8fff6); border: 1px solid rgba(0,117,253,.25); border-radius: 10px; }
+.cta a { color: var(--royal); font-weight: 650; }
+@media (max-width: 720px) { .grid-2 { grid-template-columns: 1fr; } }
+@media print { body { margin: 0; } a { color: inherit; text-decoration: none; } }
+</style>
+</head>
+<body>
+  <p class="tag">Amastan · Pilot RC1 · Admin Guide</p>
+  <h1>Amastan AI-SWG — Admin Guide</h1>
+  <p class="edge">Deploy, identity, policy, verification, capacity planning, and what comes next.</p>
+  <p><strong>Audience:</strong> Deployment engineers and security administrators<br/>
+  <strong>Related:</strong> <a href="Amastan-AI-SWG-User-Guide.pdf">User Guide</a> · <a href="Amastan-AI-SWG-System-Specifications.html">System Specifications</a><br/>
+  <strong>Updated:</strong> 2026-08-23</p>
+
+  <h2>1. Scope</h2>
+  <p>This admin guide covers installing the appliance, bringing up the HA stack, connecting identity, operating policies, verifying the deployment, and planning resources for larger user counts.</p>
+  <p>For click-by-click operator screens, use the <strong>User Guide</strong> PDF.</p>
+
+  <h2>2. Prerequisites</h2>
+  <ul>
+    <li>KVM/QEMU or compatible hypervisor for the pilot qcow2</li>
+    <li>Adequate CPU / RAM / disk (see capacity table below and System Specifications)</li>
+    <li>Management network access to Admin UI and (lab-only) sidecar</li>
+    <li>Outbound access only as required for updates / threat intel (air-gap patterns supported later)</li>
+  </ul>
+
+  <h2>3. Obtain the appliance</h2>
+  <ol>
+    <li>Request download entitlement from <a href="https://amastansolution.com/">amastansolution.com</a> (Contact / Downloads).</li>
+    <li>Verify SHA-256 of <code>ai-swg-v1.0.1-pilot-rc1-sanitized.qcow2</code>.</li>
+    <li>Import into your hypervisor and attach networks per deploy docs.</li>
+  </ol>
+  <p>Do not redistribute the image without authorization.</p>
+
+  <h2>4. Deploy HA stack (summary)</h2>
+  <p>On the appliance host (canonical lab path example: <code>/home/swg/swg-project</code>):</p>
+  <pre><code>./scripts/appliance/deploy-lab-appliance-ha.sh
+./scripts/appliance/run-lab-qa-manifest.sh</code></pre>
+  <p>Confirm:</p>
+  <ul>
+    <li>Sidecar health (e.g. <code>:8010/health</code>)</li>
+    <li>Admin UI reachable (e.g. <code>:8080</code>)</li>
+    <li>Proxy path ready for clients</li>
+  </ul>
+
+  <h2>5. First admin login</h2>
+  <ol>
+    <li>Open Admin UI.</li>
+    <li>Complete onboarding wizard (policies, basics).</li>
+    <li>Create / confirm admin users and RBAC.</li>
+    <li>Change default credentials before any shared pilot.</li>
+  </ol>
+
+  <h2>6. Identity</h2>
+  <ul>
+    <li>Configure LDAP/AD for user-aware policy and audit.</li>
+    <li>Test directory bind and group mapping.</li>
+    <li>Plan Azure AD / SAML / OIDC for later enterprise hardening.</li>
+  </ul>
+
+  <h2>7. Policy operations</h2>
+  <ul>
+    <li>Maintain allowlist / blocklist / overrides.</li>
+    <li>Use URL classifier test tools before broad enforce.</li>
+    <li>Understand allow / block / RBI outcomes and appeal flows.</li>
+    <li>Prefer staged enforce (monitor → enforce) for new categories.</li>
+  </ul>
+
+  <h2>8. Observability &amp; SIEM</h2>
+  <ul>
+    <li>Use embedded Grafana / Prometheus views for health.</li>
+    <li>Export logs to your SIEM (syslog / object storage / webhooks as configured).</li>
+    <li>Retain audit evidence for regulated pilots.</li>
+  </ul>
+
+  <h2>9. Backup &amp; recovery</h2>
+  <ul>
+    <li>Use built-in backup/restore procedures before major changes.</li>
+    <li>Document fail-open vs fail-closed expectations for your risk policy.</li>
+  </ul>
+
+  <h2>10. Capacity planning — system tests by user scale</h2>
+  <p>Use this table when planning hardware for a pilot or production-like site. Numbers are <strong>planning guidance</strong> from Pilot RC1 capacity tests and appliance sizing (TLS inspect on, typical office browsing mix, RBI used only for grey-zone / risky sites).</p>
+  <div class="note"><strong>How to read “users”:</strong> named directory users. Concurrent active browsers are usually much lower (often ~10–20% at peak). Heavy RBI, full packet capture, or very chatty SaaS apps need more headroom.</div>
+  <table>
+    <thead>
+      <tr>
+        <th>Named users</th>
+        <th>Peak concurrent (est.)</th>
+        <th>Nodes</th>
+        <th>vCPU / node</th>
+        <th>RAM / node</th>
+        <th>Disk / node (SSD)</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Lab / demo (&lt;100)</td>
+        <td>&lt; 30</td>
+        <td>1</td>
+        <td>8+</td>
+        <td>32 GB</td>
+        <td>200+ GB</td>
+        <td>QA + functional demo</td>
+      </tr>
+      <tr>
+        <td>500</td>
+        <td>~50–100</td>
+        <td>1 (HA optional)</td>
+        <td>12–16</td>
+        <td>48–64 GB</td>
+        <td>500 GB</td>
+        <td>Small office pilot</td>
+      </tr>
+      <tr>
+        <td><strong>2,000</strong></td>
+        <td>~200–400</td>
+        <td><strong>2 (HA)</strong></td>
+        <td><strong>16</strong></td>
+        <td><strong>64 GB</strong></td>
+        <td><strong>1 TB</strong></td>
+        <td>Standard pilot / mid-site target</td>
+      </tr>
+      <tr>
+        <td><strong>4,000</strong></td>
+        <td>~400–800</td>
+        <td><strong>2 (HA)</strong></td>
+        <td><strong>24</strong></td>
+        <td><strong>96 GB</strong></td>
+        <td><strong>1.5 TB</strong></td>
+        <td>Scale-up same HA pair; watch classify latency</td>
+      </tr>
+      <tr>
+        <td>10,000</td>
+        <td>~1,000–2,000</td>
+        <td>2–3</td>
+        <td>32</td>
+        <td>128 GB</td>
+        <td>2 TB</td>
+        <td>Add node or split roles; SIEM export sizing matters</td>
+      </tr>
+      <tr>
+        <td><strong>20,000</strong></td>
+        <td>~2,000–4,000</td>
+        <td><strong>3–4</strong></td>
+        <td><strong>32–48</strong></td>
+        <td><strong>128–192 GB</strong></td>
+        <td><strong>4 TB</strong></td>
+        <td>Multi-node / fleet design; validate with load test before go-live</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3>What we measure in system tests</h3>
+  <ul>
+    <li>Proxy path health under concurrent sessions (allow / block decisions)</li>
+    <li>Classify latency and error rate on the AI sidecar</li>
+    <li>HA failover (one node down — traffic still decided)</li>
+    <li>Log / dashboard growth (disk retention for audits)</li>
+    <li>Optional RBI capacity (isolation is heavier than allow/block)</li>
+  </ul>
+  <p class="muted">Before a large rollout, run a scoped load test on your traffic mix. We help size this during the 4–6 week pilot.</p>
+
+  <h2>11. Verification checklist</h2>
+  <ul>
+    <li>[ ] HA deploy completed</li>
+    <li>[ ] QA manifest acceptable for pilot scope</li>
+    <li>[ ] Admin MFA / password policy set</li>
+    <li>[ ] Directory integration tested</li>
+    <li>[ ] Sample allow / block / RBI proven</li>
+    <li>[ ] SIEM or log export verified</li>
+    <li>[ ] Client proxy path documented for pilot users</li>
+    <li>[ ] Capacity profile chosen (2k / 4k / 20k …) and hardware reserved</li>
+  </ul>
+
+  <h2>12. Features coming in the future</h2>
+  <p>Pilot RC1 focuses on deep self-hosted SWG. Planned next (dates can move):</p>
+  <div class="grid-2">
+    <div class="card"><strong>Harder to skip the filter</strong><span>Close modern browser / DNS bypass holes; official skip-inspect only for sites like banking.</span></div>
+    <div class="card"><strong>Stronger IdP</strong><span>Azure AD / SAML / OIDC hardening on top of LDAP/AD.</span></div>
+    <div class="card"><strong>Safer ChatGPT / Copilot</strong><span>Block pasting source code or customer files into AI prompts.</span></div>
+    <div class="card"><strong>Finer cloud-app control</strong><span>Not only allow Salesforce — allow view, block download.</span></div>
+    <div class="card"><strong>Private work apps (ZTNA)</strong><span>Reach one internal app without a full VPN.</span></div>
+    <div class="card"><strong>Multi-site fleet</strong><span>Same rules across offices; one health picture.</span></div>
+    <div class="card"><strong>Malware / attacker sites</strong><span>Stronger known-bad file and C2 blocking; sandbox unknowns.</span></div>
+    <div class="card"><strong>Automatic follow-up</strong><span>After an incident: block site, open ticket, notify SOC, or disable account.</span></div>
+    <div class="card"><strong>Richer SIEM + audit packs</strong><span>Exports auditors can download as a file, not only screenshots.</span></div>
+    <div class="card"><strong>Sector packs</strong><span>Ready rule sets for banks, government, education, and partners.</span></div>
+  </div>
+  <p class="muted">Licensed options today/soon: DLP (stop secret uploads), Shadow IT / unofficial cloud apps — when enabled on your contract.</p>
+
+  <h2>13. Support</h2>
+  <p>Pilot questions: use the Contact form on the official website or email the project contact in your pilot pack.</p>
+
+  <div class="cta">
+    <strong>Next step:</strong>
+    <a href="https://amastansolution.com/pilot.html">Request a pilot</a>
+    · email <a href="mailto:kabdi.kalboddine@gmail.com?subject=Amastan%20pilot%20request">kabdi.kalboddine@gmail.com</a>
+  </div>
+  <p class="muted">© Amastan — Admin Guide for Pilot RC1. Print → Save as PDF if needed.</p>
+</body>
+</html>

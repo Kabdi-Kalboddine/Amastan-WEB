@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 620" role="img" aria-labelledby="title desc">
+  <title id="title">Amastan AI-SWG architecture</title>
+  <desc id="desc">Client traffic through HAProxy to Envoy with Wasm filter, then AI sidecar for classification, producing allow, block, or RBI, with admin console and observability on-prem.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#eef3ff"/>
+      <stop offset="100%" stop-color="#ffffff"/>
+    </linearGradient>
+    <linearGradient id="box" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0075fd"/>
+      <stop offset="100%" stop-color="#00008a"/>
+    </linearGradient>
+    <linearGradient id="mint" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#44f4b4"/>
+      <stop offset="100%" stop-color="#0075fd"/>
+    </linearGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#00008a"/>
+    </marker>
+  </defs>
+  <rect width="1100" height="620" rx="24" fill="url(#bg)"/>
+  <text x="48" y="58" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="700" fill="#00008a">Amastan AI-SWG  on-prem path</text>
+  <text x="48" y="88" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#5b6b98">Verdicts and logs stay on your infrastructure</text>
+
+  <!-- Users -->
+  <rect x="48" y="140" width="160" height="88" rx="16" fill="#fff" stroke="#d7e0f5" stroke-width="2"/>
+  <text x="128" y="178" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700" fill="#00008a">Users / Sites</text>
+  <text x="128" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#5b6b98">Browsers &amp; apps</text>
+
+  <line x1="208" y1="184" x2="268" y2="184" stroke="#00008a" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <!-- HAProxy -->
+  <rect x="270" y="140" width="170" height="88" rx="16" fill="url(#box)"/>
+  <text x="355" y="178" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700" fill="#fff">HAProxy</text>
+  <text x="355" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#d8fff0">Edge entry</text>
+
+  <line x1="440" y1="184" x2="500" y2="184" stroke="#00008a" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <!-- Envoy -->
+  <rect x="502" y="140" width="190" height="88" rx="16" fill="url(#box)"/>
+  <text x="597" y="172" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700" fill="#fff">Envoy + Wasm</text>
+  <text x="597" y="194" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#d8fff0">Policy filter</text>
+  <text x="597" y="212" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#cfe3ff">TLS / HTTP inspect</text>
+
+  <line x1="597" y1="228" x2="597" y2="286" stroke="#00008a" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <!-- AI sidecar -->
+  <rect x="492" y="290" width="210" height="96" rx="16" fill="url(#mint)"/>
+  <text x="597" y="328" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="800" fill="#000066">AI sidecar</text>
+  <text x="597" y="350" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#0b1440">URL / content classify</text>
+  <text x="597" y="368" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#0b1440">Cache + ML path</text>
+
+  <line x1="702" y1="338" x2="768" y2="338" stroke="#00008a" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <!-- Verdicts -->
+  <rect x="770" y="250" width="280" height="176" rx="18" fill="#fff" stroke="#0075fd" stroke-width="2.5"/>
+  <text x="910" y="286" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700" fill="#00008a">Verdict</text>
+  <rect x="798" y="304" width="224" height="28" rx="8" fill="#e8fff6"/>
+  <text x="910" y="323" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700" fill="#0b9f6e">Allow</text>
+  <rect x="798" y="342" width="224" height="28" rx="8" fill="#ffe8e8"/>
+  <text x="910" y="361" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700" fill="#c0392b">Block</text>
+  <rect x="798" y="380" width="224" height="28" rx="8" fill="#eef3ff"/>
+  <text x="910" y="399" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700" fill="#0075fd">Optional RBI (isolate)</text>
+
+  <!-- Control plane -->
+  <rect x="48" y="450" width="1004" height="130" rx="18" fill="#fff" stroke="#d7e0f5" stroke-width="2"/>
+  <text x="72" y="488" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700" fill="#00008a">Operator plane (on your appliance)</text>
+
+  <rect x="72" y="510" width="220" height="46" rx="12" fill="#f5f8ff" stroke="#d7e0f5"/>
+  <text x="182" y="538" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="650" fill="#00008a">Admin console</text>
+
+  <rect x="310" y="510" width="220" height="46" rx="12" fill="#f5f8ff" stroke="#d7e0f5"/>
+  <text x="420" y="538" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="650" fill="#00008a">LDAP / AD identity</text>
+
+  <rect x="548" y="510" width="220" height="46" rx="12" fill="#f5f8ff" stroke="#d7e0f5"/>
+  <text x="658" y="538" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="650" fill="#00008a">Grafana / Loki</text>
+
+  <rect x="786" y="510" width="240" height="46" rx="12" fill="#f5f8ff" stroke="#d7e0f5"/>
+  <text x="906" y="538" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="650" fill="#00008a">Audit logs &amp; SIEM export</text>
+</svg>

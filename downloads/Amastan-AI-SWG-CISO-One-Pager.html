@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Amastan AI-SWG — CISO One-Pager</title>
+  <style>
+    @page { margin: 12mm; size: A4; }
+    :root {
+      --navy: #00008a;
+      --royal: #0075fd;
+      --ink: #0b1440;
+      --muted: #5b6b98;
+      --line: #d7e0f5;
+      --soft: #f5f8ff;
+      --win: #005fd1;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: "Segoe UI", system-ui, sans-serif;
+      color: var(--ink);
+      max-width: 900px;
+      margin: 20px auto;
+      padding: 0 16px 28px;
+      line-height: 1.42;
+      font-size: 0.92rem;
+    }
+    body.rtl { direction: rtl; font-family: "Segoe UI", "Noto Naskh Arabic", "Tahoma", system-ui, sans-serif; }
+    .top {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.6rem;
+      margin-bottom: 0.55rem;
+    }
+    .lang {
+      display: inline-flex;
+      gap: 0.25rem;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 0.15rem;
+      background: #fff;
+    }
+    .lang button {
+      border: 0;
+      background: transparent;
+      color: var(--muted);
+      font: inherit;
+      font-size: 0.75rem;
+      font-weight: 750;
+      letter-spacing: 0.04em;
+      padding: 0.3rem 0.65rem;
+      border-radius: 999px;
+      cursor: pointer;
+    }
+    .lang button[aria-pressed="true"] {
+      background: var(--navy);
+      color: #fff;
+    }
+    .tag {
+      color: var(--royal);
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 750;
+      margin: 0;
+    }
+    h1 {
+      font-size: 1.55rem;
+      margin: 0 0 0.35rem;
+      color: var(--navy);
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+    }
+    .edge {
+      font-size: 1.02rem;
+      font-weight: 650;
+      color: var(--ink);
+      margin: 0 0 0.85rem;
+      max-width: 46rem;
+    }
+    h2 {
+      font-size: 0.98rem;
+      margin: 1.05rem 0 0.4rem;
+      color: var(--navy);
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 0.2rem;
+    }
+    p { margin: 0 0 0.55rem; }
+    .muted { color: var(--muted); font-size: 0.82rem; }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.55rem 1.1rem;
+    }
+    .feat {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 0.45rem 0.6rem;
+      background: #fff;
+    }
+    .feat strong { display: block; color: var(--navy); font-size: 0.88rem; margin-bottom: 0.1rem; }
+    .feat span { color: #334; font-size: 0.8rem; }
+    .badge {
+      display: inline-block;
+      font-size: 0.65rem;
+      font-weight: 750;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--royal);
+      background: rgba(0, 117, 253, 0.08);
+      border: 1px solid rgba(0, 117, 253, 0.22);
+      border-radius: 999px;
+      padding: 0.05rem 0.4rem;
+      margin-inline-start: 0.25rem;
+      vertical-align: middle;
+    }
+    ul.compact { margin: 0.25rem 0 0.4rem; padding-inline-start: 1.15rem; }
+    ul.compact li { margin: 0.15rem 0; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 0.35rem 0 0.4rem;
+      font-size: 0.8rem;
+    }
+    th, td {
+      border: 1px solid var(--line);
+      padding: 5px 7px;
+      text-align: start;
+      vertical-align: top;
+    }
+    th { background: var(--soft); color: var(--navy); font-weight: 750; }
+    td:first-child { font-weight: 650; color: var(--ink); width: 32%; }
+    .win { color: var(--win); font-weight: 700; }
+    .pillars {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.5rem;
+      margin: 0.4rem 0 0.2rem;
+    }
+    .pillar {
+      background: var(--soft);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 0.5rem 0.6rem;
+    }
+    .pillar b { display: block; color: var(--navy); font-size: 0.86rem; margin-bottom: 0.15rem; }
+    .pillar span { font-size: 0.78rem; color: #334; }
+    ol.steps { margin: 0.25rem 0 0; padding-inline-start: 1.2rem; }
+    ol.steps li { margin: 0.2rem 0; }
+    .cta {
+      margin-top: 0.95rem;
+      padding: 0.75rem 0.9rem;
+      background: linear-gradient(135deg, #eef4ff, #e8fff6);
+      border: 1px solid rgba(0, 117, 253, 0.25);
+      border-radius: 10px;
+    }
+    .cta a { color: var(--royal); font-weight: 650; }
+    .road {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.35rem 1rem;
+      font-size: 0.8rem;
+      margin: 0.25rem 0 0;
+      padding-inline-start: 1.15rem;
+    }
+    .road li { margin: 0.12rem 0; }
+    @media (max-width: 720px) {
+      .grid-2, .pillars, .road { grid-template-columns: 1fr; }
+    }
+    @media print {
+      body { margin: 0; max-width: none; font-size: 0.84rem; }
+      .noprint { display: none; }
+      .feat, .pillar, .cta { break-inside: avoid; }
+      a { color: inherit; text-decoration: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="top">
+    <p class="tag" data-i18n="tag">Amastan · Pilot RC1 · CISO brief</p>
+    <div class="lang noprint" role="group" aria-label="Language">
+      <button type="button" data-lang="en" aria-pressed="true">EN</button>
+      <button type="button" data-lang="fr" aria-pressed="false">FR</button>
+      <button type="button" data-lang="ar" aria-pressed="false">AR</button>
+    </div>
+  </div>
+  <h1 data-i18n="title">Self-hosted AI Secure Web Gateway</h1>
+  <p class="edge" data-i18n="edge"></p>
+
+  <h2 data-i18n="h_problem">The problem</h2>
+  <p data-i18n="p_problem"></p>
+
+  <h2 data-i18n="h_why">Why CISOs choose self-hosted</h2>
+  <div class="pillars">
+    <div class="pillar"><b data-i18n="p1_t"></b><span data-i18n="p1_d"></span></div>
+    <div class="pillar"><b data-i18n="p2_t"></b><span data-i18n="p2_d"></span></div>
+    <div class="pillar"><b data-i18n="p3_t"></b><span data-i18n="p3_d"></span></div>
+  </div>
+
+  <h2 data-i18n="h_caps">Capabilities on the current pilot</h2>
+  <div class="grid-2">
+    <div class="feat"><strong data-i18n="f1_t"></strong><span data-i18n="f1_d"></span></div>
+    <div class="feat"><strong data-i18n="f2_t"></strong><span data-i18n="f2_d"></span></div>
+    <div class="feat"><strong data-i18n="f3_t"></strong><span data-i18n="f3_d"></span></div>
+    <div class="feat"><strong data-i18n="f4_t"></strong><span data-i18n="f4_d"></span></div>
+    <div class="feat"><strong data-i18n="f5_t"></strong><span data-i18n="f5_d"></span></div>
+    <div class="feat"><strong data-i18n="f6_t"></strong><span data-i18n="f6_d"></span></div>
+    <div class="feat"><strong data-i18n="f7_t"></strong><span data-i18n="f7_d"></span></div>
+    <div class="feat"><strong data-i18n="f8_t"></strong><span data-i18n="f8_d"></span></div>
+    <div class="feat"><strong><span data-i18n="f9_t"></span> <span class="badge" data-i18n="licensed">Licensed</span></strong><span data-i18n="f9_d"></span></div>
+    <div class="feat"><strong><span data-i18n="f10_t"></span> <span class="badge" data-i18n="licensed">Licensed</span></strong><span data-i18n="f10_d"></span></div>
+    <div class="feat"><strong data-i18n="f11_t"></strong><span data-i18n="f11_d"></span></div>
+    <div class="feat"><strong data-i18n="f12_t"></strong><span data-i18n="f12_d"></span></div>
+  </div>
+
+  <h2 data-i18n="h_stack">How it fits your stack</h2>
+  <ul class="compact">
+    <li data-i18n="s1"></li>
+    <li data-i18n="s2"></li>
+    <li data-i18n="s3"></li>
+    <li data-i18n="s4"></li>
+    <li data-i18n="s5"></li>
+  </ul>
+
+  <h2 data-i18n="h_vs">Amastan vs typical cloud SWG (honest)</h2>
+  <table>
+    <thead>
+      <tr>
+        <th data-i18n="th_dim"></th>
+        <th data-i18n="th_cloud"></th>
+        <th data-i18n="th_us"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td data-i18n="c1_d"></td><td data-i18n="c1_c"></td><td class="win" data-i18n="c1_u"></td></tr>
+      <tr><td data-i18n="c2_d"></td><td data-i18n="c2_c"></td><td class="win" data-i18n="c2_u"></td></tr>
+      <tr><td data-i18n="c3_d"></td><td data-i18n="c3_c"></td><td class="win" data-i18n="c3_u"></td></tr>
+      <tr><td data-i18n="c4_d"></td><td data-i18n="c4_c"></td><td class="win" data-i18n="c4_u"></td></tr>
+      <tr><td data-i18n="c5_d"></td><td data-i18n="c5_c"></td><td class="win" data-i18n="c5_u"></td></tr>
+      <tr><td data-i18n="c6_d"></td><td data-i18n="c6_c"></td><td class="win" data-i18n="c6_u"></td></tr>
+      <tr><td data-i18n="c7_d"></td><td class="win" data-i18n="c7_c"></td><td data-i18n="c7_u"></td></tr>
+      <tr><td data-i18n="c8_d"></td><td class="win" data-i18n="c8_c"></td><td data-i18n="c8_u"></td></tr>
+      <tr><td data-i18n="c9_d"></td><td data-i18n="c9_c"></td><td class="win" data-i18n="c9_u"></td></tr>
+    </tbody>
+  </table>
+  <p class="muted" data-i18n="vs_note"></p>
+
+  <h2 data-i18n="h_road">Coming next (selected roadmap)</h2>
+  <ul class="road">
+    <li data-i18n="r1"></li>
+    <li data-i18n="r2"></li>
+    <li data-i18n="r3"></li>
+    <li data-i18n="r4"></li>
+    <li data-i18n="r5"></li>
+    <li data-i18n="r6"></li>
+    <li data-i18n="r7"></li>
+    <li data-i18n="r8"></li>
+  </ul>
+
+  <h2 data-i18n="h_pilot">Pilot offer (4–6 weeks)</h2>
+  <ol class="steps">
+    <li data-i18n="pi1"></li>
+    <li data-i18n="pi2"></li>
+    <li data-i18n="pi3"></li>
+    <li data-i18n="pi4"></li>
+  </ol>
+
+  <div class="cta">
+    <strong data-i18n="next"></strong>
+    <a href="https://amastansolution.com/pilot.html" data-i18n="pilot_link">amastansolution.com/pilot</a>
+    <span data-i18n="or_email"> or email </span>
+    <a href="mailto:kabdi.kalboddine@gmail.com?subject=Amastan%20pilot%20request">kabdi.kalboddine@gmail.com</a>
+    · LinkedIn:
+    <a href="https://www.linkedin.com/in/kalboddine/">linkedin.com/in/kalboddine</a>
+  </div>
+  <p class="muted noprint" data-i18n="print_tip"></p>
+
+<script>
+const I18N = {
+en: {
+  tag: "Amastan · Pilot RC1 · CISO brief",
+  title: "Self-hosted AI Secure Web Gateway",
+  edge: "Amastan checks every staff web click on machines you run — allow, block, or open the page in a safer remote browser — with verdicts and logs that stay on your infrastructure. No cloud SWG lock-in.",
+  h_problem: "The problem",
+  p_problem: "Many companies protect browsing with a cloud security service. That works for global scale — but banks, government, telecom, and critical networks often need the traffic, decisions, and logs to stay inside their own network. Cloud tools can also feel like a black box when something important is blocked.",
+  h_why: "Why CISOs choose self-hosted",
+  p1_t: "Data residency", p1_d: "Browsing checks and logs stay on infrastructure you control — easier for audits and local rules.",
+  p2_t: "Visible decisions", p2_d: "Operators see why a site was allowed or blocked, and can fix policy without waiting on a vendor.",
+  p3_t: "Honest ownership", p3_d: "You run the appliance. You are not tied only to someone else’s cloud edge and pricing model.",
+  h_caps: "Capabilities on the current pilot",
+  licensed: "Licensed",
+  f1_t: "Allow, block, or open safely", f1_d: "Decide if a site is allowed, blocked, or opened in a sealed remote browser (RBI) so a risky page cannot infect the PC.",
+  f2_t: "AI for unknown websites", f2_d: "When a link is new or unclear, Amastan’s AI helps judge risk quickly — not only a fixed category list.",
+  f3_t: "Checkpoint on every click", f3_d: "Staff traffic passes a fast filter before the internet, so policy applies in real time.",
+  f4_t: "Operator control panel", f4_d: "One console for rules, traffic decisions, system health, and settings — without living in the command line.",
+  f5_t: "Know who is browsing", f5_d: "Logs can show the person (LDAP / Active Directory), not only an IP. Finance can have different rules than contractors.",
+  f6_t: "Live health and charts", f6_d: "See if the system is healthy, how busy it is, and what was blocked — useful for IT and for audits (Grafana / Loki).",
+  f7_t: "Keeps working if one box fails", f7_d: "Built as a high-availability pair so a single failure does not take the whole web filter offline.",
+  f8_t: "Alert your security team", f8_d: "Important events can go to the monitoring tools you already use. Amastan does not replace your SIEM.",
+  f9_t: "Stop secret files leaving", f9_d: "Watch uploads for card numbers, ID numbers, or confidential text and flag them for review.",
+  f10_t: "See unofficial cloud apps", f10_d: "Find staff using personal Dropbox, random file-share sites, and similar tools the company never approved.",
+  f11_t: "Help with email links", f11_d: "Handle dangerous links from mail with the same allow / block / safe-open path as the web filter.",
+  f12_t: "Company PCs stay on the path", f12_d: "A Windows helper can enroll the laptop so internet still goes through Amastan outside the office.",
+  h_stack: "How it fits your stack",
+  s1: "Self-hosted appliance you operate (Docker / HA lab deploy).",
+  s2: "Traffic path: HAProxy → Envoy + Wasm fast policy → AI sidecar for unknown / grey-zone URLs.",
+  s3: "Identity: works with your staff directory — Amastan is not a new password system.",
+  s4: "Evidence: verdicts, logs, and dashboards your operators and auditors can review.",
+  s5: "Pilot QA: lab harness with 50+ automated scenarios to prove allow / block / RBI before production.",
+  h_vs: "Amastan vs typical cloud SWG (honest)",
+  th_dim: "What you care about", th_cloud: "Typical cloud SWG", th_us: "Amastan (self-hosted)",
+  c1_d: "Where is staff web traffic checked?", c1_c: "Sent to the vendor’s servers worldwide", c1_u: "Checked on a machine you run",
+  c2_d: "Where do allow / block logs live?", c2_c: "In the vendor’s cloud portal", c2_u: "On your servers and dashboards",
+  c3_d: "Can you see why a site was blocked?", c3_c: "Often a short vendor reason", c3_u: "Clear decision path your team owns",
+  c4_d: "Does browsing data stay with you?", c4_c: "Usually leaves your network / country", c4_u: "Stays on infrastructure you control",
+  c5_d: "Who changes the rules?", c5_c: "Vendor console and their limits", c5_u: "Your security / network team",
+  c6_d: "If the link to the vendor fails?", c6_c: "Protection can slow or stop with their edge", c6_u: "Keeps deciding inside your site / lab",
+  c7_d: "Offices and travelers worldwide", c7_c: "Built for global users today", c7_u: "Best for one site or HA pair now",
+  c8_d: "How fast can you start?", c8_c: "Often same-day SaaS signup", c8_u: "Lab install in hours, then tune",
+  c9_d: "How you pay and own it", c9_c: "Ongoing cloud subscription", c9_u: "Appliance you host — start with a pilot",
+  vs_note: "We are honest: Amastan is not a full cloud SSE suite yet. Pilot RC1 focuses on deep self-hosted SWG (allow / block / safer remote browse). Private access (ZTNA) and multi-site fleet are on the roadmap.",
+  h_road: "Coming next (selected roadmap)",
+  r1: "Harder to skip the filter (modern browsers / DNS tricks)",
+  r2: "Finer control inside popular cloud apps",
+  r3: "Safer use of ChatGPT / Copilot (block pasting secrets)",
+  r4: "Stronger malware / attacker-site blocking",
+  r5: "Private work apps without full VPN (ZTNA)",
+  r6: "Multi-site picture and automatic follow-up actions",
+  r7: "Richer SIEM exports and auditor evidence packs",
+  r8: "Sector packs (banks, government, education, partners)",
+  h_pilot: "Pilot offer (4–6 weeks)",
+  pi1: "Scope — sites to test, identity source, success criteria, air-gap / residency constraints.",
+  pi2: "Deploy — sanitized pilot appliance in your lab; connect a controlled traffic path.",
+  pi3: "Prove — allow / block / RBI on known-good, known-bad, and grey-zone URLs.",
+  pi4: "Review — logs, dashboards, and operator workflows with your network / SOC team; decide go / no-go.",
+  next: "Next step: request a pilot at ",
+  pilot_link: "amastansolution.com/pilot",
+  or_email: " or email ",
+  print_tip: "Tip: Print → Save as PDF for sharing with your security board."
+},
+fr: {
+  tag: "Amastan · Pilot RC1 · Brief CISO",
+  title: "Passerelle web sécurisée IA self-hosted",
+  edge: "Amastan vérifie chaque clic web du personnel sur des machines que vous opérez — autoriser, bloquer, ou ouvrir la page dans un navigateur distant plus sûr — avec des verdicts et journaux qui restent sur votre infrastructure. Sans lock-in SWG cloud.",
+  h_problem: "Le problème",
+  p_problem: "Beaucoup d’entreprises protègent la navigation avec un service cloud. Cela convient à l’échelle mondiale — mais les banques, l’État, les telecoms et les réseaux critiques ont souvent besoin que le trafic, les décisions et les journaux restent dans leur propre réseau. Les outils cloud peuvent aussi devenir une boîte noire quand un site important est bloqué.",
+  h_why: "Pourquoi les CISO choisissent le self-hosted",
+  p1_t: "Résidence des données", p1_d: "Contrôles et journaux restent sur une infrastructure que vous maîtrisez — plus simple pour audits et règles locales.",
+  p2_t: "Décisions visibles", p2_d: "Les opérateurs voient pourquoi un site est autorisé ou bloqué, et corrigent la règle sans attendre l’éditeur.",
+  p3_t: "Propriété claire", p3_d: "Vous opérez l’appliance. Vous n’êtes pas liés seulement à l’edge cloud et au modèle tarifaire d’un autre.",
+  h_caps: "Capacités du pilote actuel",
+  licensed: "Licencié",
+  f1_t: "Autoriser, bloquer, ou ouvrir en sécurité", f1_d: "Décidez si un site est autorisé, bloqué, ou ouvert dans un navigateur distant scellé (RBI) pour qu’une page risquée n’infecte pas le PC.",
+  f2_t: "IA pour les sites inconnus", f2_d: "Quand un lien est nouveau ou flou, l’IA d’Amastan aide à juger le risque rapidement — pas seulement une liste fixe.",
+  f3_t: "Un filtre à chaque clic", f3_d: "Le trafic du personnel passe un filtre rapide avant Internet, donc la politique s’applique en temps réel.",
+  f4_t: "Console opérateur", f4_d: "Un écran pour les règles, les décisions de trafic, la santé système et les réglages — sans vivre en ligne de commande.",
+  f5_t: "Savoir qui navigue", f5_d: "Les journaux peuvent montrer la personne (LDAP / Active Directory), pas seulement une IP. La finance peut avoir d’autres règles que les prestataires.",
+  f6_t: "Santé et graphiques en direct", f6_d: "Voir si le système est sain, la charge, et ce qui a été bloqué — utile pour l’IT et les audits (Grafana / Loki).",
+  f7_t: "Continue si une machine tombe", f7_d: "Conçu en paire haute disponibilité pour qu’une panne unique n’arrête pas tout le filtre web.",
+  f8_t: "Alerter votre équipe sécurité", f8_d: "Les événements importants peuvent aller vers les outils que vous utilisez déjà. Amastan ne remplace pas votre SIEM.",
+  f9_t: "Empêcher les fichiers secrets de partir", f9_d: "Surveiller les envois (numéros de carte, pièces d’identité, texte confidentiel) et les signaler pour revue.",
+  f10_t: "Voir les applis cloud non officielles", f10_d: "Repérer l’usage de Dropbox perso, de partages de fichiers aléatoires, et d’outils jamais approuvés.",
+  f11_t: "Aider avec les liens e-mail", f11_d: "Traiter les liens dangereux du mail avec le même chemin autoriser / bloquer / ouvrir en sécurité.",
+  f12_t: "Les PC d’entreprise restent sur le chemin", f12_d: "Un helper Windows peut enrôler le portable pour que Internet passe encore par Amastan hors du bureau.",
+  h_stack: "Comment cela s’intègre",
+  s1: "Appliance self-hosted que vous opérez (déploiement lab Docker / HA).",
+  s2: "Chemin trafic : HAProxy → Envoy + Wasm (politique rapide) → sidecar IA pour URL inconnues / grises.",
+  s3: "Identité : annuaire du personnel — Amastan n’est pas un nouveau système de mots de passe.",
+  s4: "Preuves : verdicts, journaux et tableaux de bord pour opérateurs et auditeurs.",
+  s5: "QA pilote : harnais lab avec 50+ scénarios automatisés pour prouver allow / block / RBI.",
+  h_vs: "Amastan vs SWG cloud typique (honnête)",
+  th_dim: "Ce qui compte pour vous", th_cloud: "SWG cloud typique", th_us: "Amastan (self-hosted)",
+  c1_d: "Où le trafic web du personnel est vérifié ?", c1_c: "Envoyé vers les serveurs de l’éditeur dans le monde", c1_u: "Vérifié sur une machine que vous faites tourner",
+  c2_d: "Où vivent les journaux allow / block ?", c2_c: "Dans le portail cloud de l’éditeur", c2_u: "Sur vos serveurs et tableaux de bord",
+  c3_d: "Peut-on voir pourquoi un site est bloqué ?", c3_c: "Souvent une courte raison éditeur", c3_u: "Chemin de décision clair, à vous",
+  c4_d: "Les données de navigation restent-elles chez vous ?", c4_c: "Elles quittent en général votre réseau / pays", c4_u: "Restent sur une infrastructure que vous contrôlez",
+  c5_d: "Qui change les règles ?", c5_c: "Console éditeur et ses limites", c5_u: "Votre équipe sécu / réseau",
+  c6_d: "Et si le lien vers l’éditeur tombe ?", c6_c: "La protection peut ralentir ou s’arrêter avec leur edge", c6_u: "Continue de décider dans votre site / labo",
+  c7_d: "Bureaux et voyageurs dans le monde", c7_c: "Conçu pour les utilisateurs mondiaux dès aujourd’hui", c7_u: "Idéal pour un site ou une paire HA",
+  c8_d: "En combien de temps démarrer ?", c8_c: "Souvent inscription SaaS le jour même", c8_u: "Install labo en quelques heures, puis réglages",
+  c9_d: "Comment vous payez et possédez le système", c9_c: "Abonnement cloud récurrent", c9_u: "Appliance que vous hébergez — commencez par un pilote",
+  vs_note: "Soyons clairs : Amastan n’est pas encore une suite SSE cloud complète. Le pilote vise une SWG self-hosted approfondie (allow / block / navigation distante plus sûre). Accès privé (ZTNA) et multi-sites sont en roadmap.",
+  h_road: "À venir (roadmap sélectionnée)",
+  r1: "Plus difficile de contourner le filtre (navigateurs modernes / astuces DNS)",
+  r2: "Contrôle plus fin dans les apps cloud populaires",
+  r3: "Usage plus sûr de ChatGPT / Copilot (bloquer le collage de secrets)",
+  r4: "Blocage malware / sites attaquants plus fort",
+  r5: "Apps de travail privées sans VPN complet (ZTNA)",
+  r6: "Vue multi-sites et actions de suivi automatiques",
+  r7: "Exports SIEM plus riches et packs preuves audit",
+  r8: "Packs sectoriels (banques, État, éducation, partenaires)",
+  h_pilot: "Offre pilote (4–6 semaines)",
+  pi1: "Cadrage — sites à tester, source d’identité, critères de succès, contraintes air-gap / résidence.",
+  pi2: "Déploiement — appliance pilote assainie dans votre labo ; chemin de trafic contrôlé.",
+  pi3: "Preuve — allow / block / RBI sur URL saines, mauvaises et grises.",
+  pi4: "Revue — journaux, tableaux de bord et workflows avec réseau / SOC ; décider go / no-go.",
+  next: "Prochaine étape : demander un pilote sur ",
+  pilot_link: "amastansolution.com/pilot",
+  or_email: " ou e-mail ",
+  print_tip: "Astuce : Imprimer → Enregistrer en PDF pour le partager au comité sécurité."
+},
+ar: {
+  tag: "Amastan · Pilot RC1 · موجز CISO",
+  title: "بوابة ويب آمنة بالذكاء الاصطناعي مستضافة ذاتياً",
+  edge: "يفحص Amastan كل نقرة ويب للموظفين على أجهزة تشغّلونها — سماح أو حظر أو فتح الصفحة في متصفح بعيد أكثر أماناً — مع قرارات وسجلات تبقى على بنيتكم. بدون ارتباط إجباري بـ SWG سحابي.",
+  h_problem: "المشكلة",
+  p_problem: "كثير من الشركات تحمي التصفح عبر خدمة سحابية. هذا يناسب التغطية العالمية — لكن البنوك والحكومة والاتصالات والشبكات الحرجة غالباً تحتاج أن يبقى المرور والقرارات والسجلات داخل شبكتها. أدوات السحابة قد تبدو أيضاً صندوقاً أسود عندما يُحظر موقع مهم.",
+  h_why: "لماذا يختار مسؤولو الأمن الاستضافة الذاتية",
+  p1_t: "إقامة البيانات", p1_d: "الفحوصات والسجلات تبقى على بنية تتحكمون بها — أسهل للتدقيق والقواعد المحلية.",
+  p2_t: "قرارات مرئية", p2_d: "يرى المشغّلون سبب السماح أو الحظر ويمكنهم تصحيح السياسة دون انتظار المزود.",
+  p3_t: "ملكية واضحة", p3_d: "أنتم تشغّلون الجهاز. لستم مرتبطين فقط بحافة سحابية ونموذج تسعير لجهة أخرى.",
+  h_caps: "قدرات التجربة الحالية",
+  licensed: "مرخّص",
+  f1_t: "سماح أو حظر أو فتح آمن", f1_d: "تقررون إن كان الموقع مسموحاً أو محظوراً أو يُفتح في متصفح بعيد معزول (RBI) حتى لا تصيب الصفحة الخطرة الجهاز.",
+  f2_t: "ذكاء اصطناعي للمواقع المجهولة", f2_d: "عندما يكون الرابط جديداً أو غير واضح، يساعد ذكاء Amastan على تقدير الخطر بسرعة — وليس قائمة فئات ثابتة فقط.",
+  f3_t: "نقطة فحص عند كل نقرة", f3_d: "يمر مرور الموظفين عبر مرشح سريع قبل الإنترنت، فتُطبَّق السياسة فوراً.",
+  f4_t: "لوحة تحكم للمشغّلين", f4_d: "شاشة واحدة للقواعد وقرارات المرور وصحة النظام والإعدادات — دون الاعتماد على سطر الأوامر فقط.",
+  f5_t: "معرفة من يتصفح", f5_d: "يمكن أن تُظهر السجلات الشخص (LDAP / Active Directory) وليس عنوان IP فقط. للمالية قواعد مختلفة عن المتعاقدين.",
+  f6_t: "صحة ورسوم مباشرة", f6_d: "رؤية إن كان النظام سليماً ومدى الانشغال وما حُظر — مفيد لتقنية المعلومات والتدقيق (Grafana / Loki).",
+  f7_t: "يستمر إن تعطّل جهاز واحد", f7_d: "مبني كزوج عالي التوفر حتى لا يوقف عطل واحد مرشح الويب بالكامل.",
+  f8_t: "تنبيه فريق الأمن", f8_d: "يمكن إرسال الأحداث المهمة إلى أدوات المراقبة لديكم. Amastan لا يستبدل نظام السجلات الأمني لديكم.",
+  f9_t: "منع خروج الملفات السرية", f9_d: "مراقبة الرفع بحثاً عن أرقام بطاقات أو هويات أو نص سري والإبلاغ للمراجعة.",
+  f10_t: "رؤية تطبيقات سحابية غير رسمية", f10_d: "اكتشاف استخدام Dropbox الشخصي ومواقع مشاركة عشوائية وأدوات لم تعتمدها الشركة.",
+  f11_t: "المساعدة مع روابط البريد", f11_d: "معالجة الروابط الخطرة من البريد بنفس مسار السماح / الحظر / الفتح الآمن.",
+  f12_t: "أجهزة الشركة تبقى على المسار", f12_d: "مساعد ويندوز يمكنه تسجيل الحاسوب المحمول ليبقى الإنترنت عبر Amastan خارج المكتب.",
+  h_stack: "كيف يندمج مع بنيتكم",
+  s1: "جهاز مستضاف ذاتياً تشغّلونه (نشر مختبر Docker / HA).",
+  s2: "مسار المرور: HAProxy ← Envoy + Wasm للسياسة السريعة ← sidecar ذكاء للمواقع المجهولة / الرمادية.",
+  s3: "الهوية: يعمل مع دليل موظفيكم — Amastan ليس نظام كلمات مرور جديداً.",
+  s4: "الأدلة: قرارات وسجلات ولوحات لمشغّليكم ومدققيكم.",
+  s5: "اختبار التجربة: أكثر من 50 سيناريو آلياً لإثبات السماح / الحظر / RBI قبل الإنتاج.",
+  h_vs: "Amastan مقابل SWG سحابي نموذجي (بصدق)",
+  th_dim: "ما يهمّكم", th_cloud: "SWG سحابي نموذجي", th_us: "Amastan (مستضاف ذاتياً)",
+  c1_d: "أين يُفحص مرور ويب الموظفين؟", c1_c: "يُرسل إلى خوادم المزود حول العالم", c1_u: "يُفحص على جهاز تشغّلونه",
+  c2_d: "أين تُحفظ سجلات السماح / الحظر؟", c2_c: "في بوابة المزود السحابية", c2_u: "على خوادمكم ولوحاتكم",
+  c3_d: "هل يمكن رؤية سبب حظر موقع؟", c3_c: "غالباً سبب قصير من المزود", c3_u: "مسار قرار واضح يملكه فريقكم",
+  c4_d: "هل تبقى بيانات التصفح لديكم؟", c4_c: "غالباً تغادر شبكتكم / بلدكم", c4_u: "تبقى على بنية تحتية تتحكمون بها",
+  c5_d: "من يغيّر القواعد؟", c5_c: "وحدة تحكم المزود وحدوده", c5_u: "فريق الأمن / الشبكة لديكم",
+  c6_d: "ماذا لو انقطع الرابط مع المزود؟", c6_c: "قد تتباطأ الحماية أو تتوقف مع طرفهم", c6_u: "يستمر باتخاذ القرار داخل موقعكم / المختبر",
+  c7_d: "مكاتب ومسافرون حول العالم", c7_c: "مبني لمستخدمين عالميين اليوم", c7_u: "أنسب لموقع واحد أو زوج HA الآن",
+  c8_d: "كم يستغرق البدء؟", c8_c: "غالباً تسجيل SaaS في نفس اليوم", c8_u: "تثبيت مختبر خلال ساعات ثم الضبط",
+  c9_d: "كيف تدفعون وتملكون النظام", c9_c: "اشتراك سحابي مستمر", c9_u: "جهاز تستضيفونه — ابدؤوا بتجربة",
+  vs_note: "بصراحة: Amastan ليست بعد حزمة أمان سحابية كاملة. التجربة تركز على بوابة ويب مستضافة ذاتياً بعمق (سماح / حظر / تصفح بعيد أكثر أماناً). الوصول الخاص (ZTNA) ومواقع متعددة في الخطة.",
+  h_road: "القادم (خارطة طريق مختارة)",
+  r1: "صعب أكثر تجاوز المرشح (متصفحات حديثة / حيل DNS)",
+  r2: "تحكم أدق داخل تطبيقات سحابية شائعة",
+  r3: "استخدام أكثر أماناً لـ ChatGPT / Copilot (منع لصق الأسرار)",
+  r4: "حظر أقوى للبرمجيات الخبيثة ومواقع المهاجمين",
+  r5: "تطبيقات عمل خاصة دون VPN كامل (ZTNA)",
+  r6: "صورة متعددة المواقع ومتابعة تلقائية",
+  r7: "تصدير SIEM أغنى وحزم أدلة للتدقيق",
+  r8: "حزم قطاعية (بنوك، حكومة، تعليم، شركاء)",
+  h_pilot: "عرض التجربة (4–6 أسابيع)",
+  pi1: "النطاق — مواقع للاختبار، مصدر الهوية، معايير النجاح، قيود العزل / الإقامة.",
+  pi2: "النشر — جهاز تجربة مُنظَّف في مختبركم؛ مسار مرور مضبوط.",
+  pi3: "الإثبات — سماح / حظر / RBI على روابط جيدة وسيئة ورمادية.",
+  pi4: "المراجعة — سجلات ولوحات وسير عمل مع الشبكة / SOC؛ قرار استمرار أو توقف.",
+  next: "الخطوة التالية: اطلبوا تجربة عبر ",
+  pilot_link: "amastansolution.com/pilot",
+  or_email: " أو البريد ",
+  print_tip: "نصيحة: اطبع ← احفظ PDF للمشاركة مع لجنة الأمن."
+}
+};
+
+function applyLang(lang) {
+  const pack = I18N[lang] || I18N.en;
+  document.documentElement.lang = lang;
+  document.body.classList.toggle("rtl", lang === "ar");
+  document.querySelectorAll("[data-i18n]").forEach((el) => {
+    const key = el.getAttribute("data-i18n");
+    if (pack[key] != null) el.textContent = pack[key];
+  });
+  document.querySelectorAll(".lang button").forEach((b) => {
+    b.setAttribute("aria-pressed", b.dataset.lang === lang ? "true" : "false");
+  });
+  try { localStorage.setItem("amastan-ciso-lang", lang); } catch (_) {}
+  const url = new URL(window.location.href);
+  if (url.searchParams.get("lang") !== lang) {
+    url.searchParams.set("lang", lang);
+    history.replaceState(null, "", url);
+  }
+}
+
+document.querySelectorAll(".lang button").forEach((b) => {
+  b.addEventListener("click", () => applyLang(b.dataset.lang));
+});
+
+const params = new URLSearchParams(window.location.search);
+const saved = (() => { try { return localStorage.getItem("amastan-ciso-lang"); } catch (_) { return null; } })();
+const initial = params.get("lang") || saved || "en";
+applyLang(["en", "fr", "ar"].includes(initial) ? initial : "en");
+</script>
+</body>
+</html>

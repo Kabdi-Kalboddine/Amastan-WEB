@@ -1,0 +1,130 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:02.800
+La sécurité web laisse les équipes face à deux choix :
+
+00:00:02.800 --> 00:00:05.400
+Tout autoriser, ou tout bloquer.
+
+00:00:05.400 --> 00:00:06.900
+Les deux échouent.
+
+00:00:06.920 --> 00:00:08.800
+Les équipes ont toujours besoin du web pour travailler.
+
+00:00:08.800 --> 00:00:11.640
+Ils naviguent, recherchent et travaillent chaque jour.
+
+00:00:11.640 --> 00:00:14.440
+Un simple choix autoriser-ou-bloquer ne suffit plus.
+
+00:00:14.440 --> 00:00:17.560
+Une recherche de travail commence par une requête web ordinaire.
+
+00:00:19.440 --> 00:00:21.120
+Le contrôle binaire échoue.
+
+00:00:21.120 --> 00:00:24.640
+L’écran affiche autoriser, bloquer et inconnu.
+
+00:00:24.640 --> 00:00:28.440
+L’inconnu est autorisé, alors que des outils utiles peuvent être bloqués.
+
+00:00:28.480 --> 00:00:30.400
+C’est là que le trou apparaît.
+
+00:00:30.400 --> 00:00:32.320
+C’est là que la fuite peut se produire.
+
+00:00:32.320 --> 00:00:36.040
+Même un site de voyage ordinaire reste une requête.
+
+00:00:36.040 --> 00:00:38.680
+La requête atteint d’abord le réseau local.
+
+00:00:41.080 --> 00:00:44.320
+La passerelle voit le trafic et enregistre l’action.
+
+00:00:44.320 --> 00:00:47.880
+La requête traverse une infrastructure que l’organisation contrôle.
+
+00:00:47.880 --> 00:00:50.040
+Puis elle atteint Internet.
+
+00:00:50.040 --> 00:00:52.800
+L’inspection dans le cloud du fournisseur envoie le journal à l’extérieur.
+
+00:00:52.800 --> 00:00:54.760
+Le trafic de confiance est autorisé.
+
+00:00:54.760 --> 00:00:58.840
+Le trafic inconnu est isolé avant que la session n’atteigne le poste.
+
+00:00:58.840 --> 00:01:03.800
+L’utilisateur continue de travailler, la session isolée reste loin du poste.
+
+00:01:03.800 --> 00:01:06.040
+Amastan est plus qu’un proxy.
+
+00:01:06.040 --> 00:01:11.720
+C’est une passerelle web sécurisée IA auto-hébergée, conçue pour tourner dans votre VPC ou votre datacenter.
+
+00:01:11.720 --> 00:01:15.280
+La décision et le journal d’audit restent sur une infrastructure que vous contrôlez.
+
+00:01:15.280 --> 00:01:18.960
+La classification peut s’améliorer à partir du trafic et des retours, dans cet environnement.
+
+00:01:18.960 --> 00:01:20.640
+Le trafic de confiance est autorisé.
+
+00:01:20.640 --> 00:01:26.040
+Un administrateur peut créer une session d’isolation distante et tester l’URL demandée par l’utilisateur.
+
+00:01:26.080 --> 00:01:31.760
+La session tourne à distance : le contenu web reste loin du poste, l’utilisateur continue de travailler.
+
+00:01:31.760 --> 00:01:33.360
+Le trafic dangereux est bloqué.
+
+00:01:35.160 --> 00:01:37.320
+Amastan n’est pas votre SIEM.
+
+00:01:37.320 --> 00:01:39.800
+Votre SIEM collecte et corrèle les preuves.
+
+00:01:39.800 --> 00:01:43.280
+Amastan prend la décision web et lui envoie le journal d’audit.
+
+00:01:43.280 --> 00:01:45.680
+Ce n’est pas votre antivirus ni votre EDR.
+
+00:01:45.680 --> 00:01:47.240
+Ceux-là protègent le poste.
+
+00:01:47.240 --> 00:01:48.920
+Ce n’est pas le pare-feu de votre usine.
+
+00:01:48.920 --> 00:01:53.760
+Amastan se concentre sur le contenu HTTP et HTTPS et la politique web.
+
+00:01:53.760 --> 00:01:55.600
+Et ce n’est pas votre passerelle de messagerie.
+
+00:01:55.600 --> 00:01:59.520
+Amastan protège ce qui se passe quand un utilisateur suit un lien vers le web.
+
+00:01:59.520 --> 00:02:01.920
+Amastan travaille avec ces contrôles,
+
+00:02:01.920 --> 00:02:05.680
+en ajoutant une couche dédiée de sécurité web, sans les remplacer.
+
+00:02:05.680 --> 00:02:07.440
+Je suis Qalbeddine.
+
+00:02:07.440 --> 00:02:11.960
+Je construis un système qui décide ce qui revient quand on ouvre un navigateur.
+
+00:02:11.960 --> 00:02:17.160
+Si vous voulez ce contrôle sans que cela tourne dans leurs données, Amastan est fait pour cela.

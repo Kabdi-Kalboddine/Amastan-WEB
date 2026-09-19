@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>What is a Secure Web Gateway (SWG)? — Amastan</title>
+  <meta name="description" content="A practical guide to Secure Web Gateways: how they work, why they matter, key features, comparisons, and how to choose — including self-hosted options." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="icon" href="assets/brand/logo-mark.png" type="image/png" />
+  <link rel="stylesheet" href="styles.css?v=aboutfeat1" />
+  <script>
+    (function () {
+      var t = localStorage.getItem("amastan_theme") || "dark";
+      document.documentElement.setAttribute("data-theme", t === "light" ? "light" : "dark");
+    })();
+  </script>
+
+</head>
+<body>
+  <header class="topbar">
+    <div class="nav-backdrop" id="nav-backdrop" hidden></div>
+    <div class="wrap topbar-inner">
+      <a class="brand" href="index.html"><img class="brand-mark brand-mark-on-dark" src="assets/brand/logo-mark.png" alt="" width="40" height="47" /><img class="brand-mark brand-mark-on-light" src="assets/brand/logo-outline.png" alt="" width="40" height="46" /><span class="brand-text">Amastan</span><span class="brand-badge">AI-SWG</span></a>
+      <nav class="nav" id="primary-nav" aria-label="Primary">
+        <a href="use-cases.html" data-i18n="nav_usecases">Use cases</a>
+        <a href="pilot.html" data-i18n="nav_pilot">Pilot</a>
+        <a href="features.html" data-i18n="nav_features">Features</a>
+        <a href="what-is-swg.html" data-i18n="nav_learn" aria-current="page">What is SWG</a>
+        <a href="check-url.html" data-i18n="nav_check">Check URL</a>
+        <a href="urls-checked.html" data-i18n="nav_checked">Checked</a>
+        <a href="about.html" data-i18n="nav_about">About</a>
+        <a href="resources.html" data-i18n="nav_downloads">Resources</a>
+        <a href="index.html#contact" data-i18n="nav_contact">Contact</a>
+        <a class="btn btn-primary nav-cta" href="pilot.html" data-i18n="cta_pilot">Request a pilot</a>
+      </nav>
+      <div class="topbar-tools">
+        <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">
+          <span class="nav-toggle-bars" aria-hidden="true"><span></span><span></span><span></span></span>
+        </button>
+        <div class="lang-menu" id="lang-menu">
+          <button type="button" class="lang-toggle" id="lang-toggle" aria-expanded="false" aria-haspopup="listbox" aria-controls="lang-dropdown">EN</button>
+          <div class="lang-dropdown" id="lang-dropdown" role="listbox" hidden>
+            <button type="button" role="option" data-lang="en" class="active">EN</button>
+            <button type="button" role="option" data-lang="fr">FR</button>
+            <button type="button" role="option" data-lang="ar">AR</button>
+          </div>
+        </div>
+        <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle color theme">Dark</button>
+        <a class="btn btn-primary topbar-cta" href="pilot.html" data-i18n="nav_cta">Request a pilot</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero page-hero learn-hero">
+      <div class="wrap">
+        <p class="kicker" data-i18n="learn_kicker">Cyberpedia · Guide</p>
+        <h1 data-i18n="learn_title">What is a Secure Web Gateway (SWG)?</h1>
+          <p class="lead" data-i18n="learn_lead">A practical guide to Secure Web Gateways: how they work, why organizations need them, core features, comparisons with related tools, and how to choose — including when self-hosted beats cloud-only.</p>
+        <p class="learn-meta" data-i18n="learn_meta">~8 min read · Educational overview</p>
+      </div>
+    </section>
+
+    <section class="section learn-section">
+      <div class="wrap learn-layout">
+        <aside class="learn-toc" aria-label="Table of contents">
+          <p class="learn-toc-title" data-i18n="learn_toc">On this page</p>
+          <ol>
+            <li><a href="#definition" data-i18n="learn_toc_def">Definition</a></li>
+            <li><a href="#how" data-i18n="learn_toc_how">How it works</a></li>
+            <li><a href="#why" data-i18n="learn_toc_why">Why it matters</a></li>
+            <li><a href="#benefits" data-i18n="learn_toc_ben">Benefits</a></li>
+            <li><a href="#features" data-i18n="learn_toc_feat">Features</a></li>
+            <li><a href="#challenges" data-i18n="learn_toc_chal">Challenges</a></li>
+            <li><a href="#aup" data-i18n="learn_toc_aup">Acceptable use</a></li>
+            <li><a href="#remote" data-i18n="learn_toc_remote">Remote &amp; branch</a></li>
+            <li><a href="#sase" data-i18n="learn_toc_sase">SWG in SASE</a></li>
+            <li><a href="#compliance" data-i18n="learn_toc_comp">Compliance</a></li>
+            <li><a href="#compare" data-i18n="learn_toc_cmp">Comparisons</a></li>
+            <li><a href="#history" data-i18n="learn_toc_hist">History</a></li>
+            <li><a href="#future" data-i18n="learn_toc_fut">Future</a></li>
+            <li><a href="#amastan-roadmap" data-i18n="learn_toc_road">Amastan roadmap</a></li>
+            <li><a href="#amastan-after" data-i18n="learn_toc_after">After the build</a></li>
+            <li><a href="#choose" data-i18n="learn_toc_choose">How to choose</a></li>
+            <li><a href="#faq" data-i18n="learn_toc_faq">FAQs</a></li>
+          </ol>
+        </aside>
+
+        <article class="learn-article">
+          <section id="definition">
+            <h2 data-i18n="learn_def_h">What is a Secure Web Gateway?</h2>
+            <p data-i18n="learn_def_p1"></p>
+            <p data-i18n="learn_def_p2"></p>
+            <div class="learn-callout">
+              <p data-i18n="learn_def_note"></p>
+            </div>
+          </section>
+
+          <section id="how">
+            <h2 data-i18n="learn_how_h">How does a secure web gateway work?</h2>
+            <p data-i18n="learn_how_p1"></p>
+            <div class="steps">
+              <div class="step"><b>1</b><span data-i18n="learn_how_1"></span></div>
+              <div class="step"><b>2</b><span data-i18n="learn_how_2"></span></div>
+              <div class="step"><b>3</b><span data-i18n="learn_how_3"></span></div>
+              <div class="step"><b>4</b><span data-i18n="learn_how_4"></span></div>
+            </div>
+            <p data-i18n="learn_how_p2"></p>
+          </section>
+
+          <section id="why">
+            <h2 data-i18n="learn_why_h">Why are secure web gateways necessary?</h2>
+            <p data-i18n="learn_why_p1"></p>
+            <ul class="learn-list">
+              <li data-i18n="learn_why_1"></li>
+              <li data-i18n="learn_why_2"></li>
+              <li data-i18n="learn_why_3"></li>
+            </ul>
+            <p data-i18n="learn_why_p2"></p>
+          </section>
+
+          <section id="benefits">
+            <h2 data-i18n="learn_ben_h">What are the benefits?</h2>
+            <div class="dl-grid">
+              <article class="card"><h3 data-i18n="learn_ben_1_t"></h3><p data-i18n="learn_ben_1_d"></p></article>
+              <article class="card"><h3 data-i18n="learn_ben_2_t"></h3><p data-i18n="learn_ben_2_d"></p></article>
+              <article class="card"><h3 data-i18n="learn_ben_3_t"></h3><p data-i18n="learn_ben_3_d"></p></article>
+              <article class="card"><h3 data-i18n="learn_ben_4_t"></h3><p data-i18n="learn_ben_4_d"></p></article>
+              <article class="card"><h3 data-i18n="learn_ben_5_t"></h3><p data-i18n="learn_ben_5_d"></p></article>
+              <article class="card"><h3 data-i18n="learn_ben_6_t"></h3><p data-i18n="learn_ben_6_d"></p></article>
+            </div>
+          </section>
+
+          <section id="features">
+            <h2 data-i18n="learn_feat_h">What are the features of an SWG?</h2>
+            <p data-i18n="learn_feat_lead"></p>
+            <div class="dl-grid">
+              <article class="card"><h3 data-i18n="learn_feat_1_t"></h3><p data-i18n="learn_feat_1_d"></p></article>
+              <article class="card"><h3 data-i18n="learn_feat_2_t"></h3><p data-i18n="learn_feat_2_d"></p></article>
+              <article class="card"><h3 data-i18n="learn_feat_3_t"></h3><p data-i18n="learn_feat_3_d"></p></article>
+              <article class="card"><h3 data-i18n="learn_feat_4_t"></h3><p data-i18n="learn_feat_4_d"></p></article>
+              <article class="card"><h3 data-i18n="learn_feat_5_t"></h3><p data-i18n="learn_feat_5_d"></p></article>
+              <article class="card"><h3 data-i18n="learn_feat_6_t"></h3><p data-i18n="learn_feat_6_d"></p></article>
+              <article class="card"><h3 data-i18n="learn_feat_7_t"></h3><p data-i18n="learn_feat_7_d"></p></article>
+              <article class="card"><h3 data-i18n="learn_feat_8_t"></h3><p data-i18n="learn_feat_8_d"></p></article>
+            </div>
+          </section>
+
+          <section id="challenges">
+            <h2 data-i18n="learn_chal_h">Common deployment challenges</h2>
+            <ul class="learn-list">
+              <li data-i18n="learn_chal_1"></li>
+              <li data-i18n="learn_chal_2"></li>
+              <li data-i18n="learn_chal_3"></li>
+              <li data-i18n="learn_chal_4"></li>
+            </ul>
+          </section>
+
+          <section id="aup">
+            <h2 data-i18n="learn_aup_h">How do SWGs enforce acceptable use policies?</h2>
+            <p data-i18n="learn_aup_p1"></p>
+            <p data-i18n="learn_aup_p2"></p>
+          </section>
+
+          <section id="remote">
+            <h2 data-i18n="learn_remote_h">Remote workforces and branch offices</h2>
+            <p data-i18n="learn_remote_p1"></p>
+            <p data-i18n="learn_remote_p2"></p>
+          </section>
+
+          <section id="sase">
+            <h2 data-i18n="learn_sase_h">What is the role of SWG in SASE?</h2>
+            <p data-i18n="learn_sase_p1"></p>
+            <p data-i18n="learn_sase_p2"></p>
+          </section>
+
+          <section id="compliance">
+            <h2 data-i18n="learn_comp_h">How do SWGs relate to compliance?</h2>
+            <p data-i18n="learn_comp_p1"></p>
+            <ul class="learn-list">
+              <li data-i18n="learn_comp_1"></li>
+              <li data-i18n="learn_comp_2"></li>
+              <li data-i18n="learn_comp_3"></li>
+            </ul>
+          </section>
+
+          <section id="compare">
+            <h2 data-i18n="learn_cmp_h">Comparing SWG with other technologies</h2>
+            <p data-i18n="learn_cmp_lead"></p>
+            <div class="compare-table-wrap">
+              <table class="compare-table learn-cmp">
+                <thead>
+                  <tr>
+                    <th data-i18n="learn_cmp_h0">Parameter</th>
+                    <th data-i18n="learn_cmp_h1">SWG</th>
+                    <th data-i18n="learn_cmp_h2">Firewall / NGFW</th>
+                    <th data-i18n="learn_cmp_h3">Proxy</th>
+                    <th data-i18n="learn_cmp_h4">WAF</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td data-i18n="learn_cmp_1_0"></td>
+                    <td data-i18n="learn_cmp_1_1"></td>
+                    <td data-i18n="learn_cmp_1_2"></td>
+                    <td data-i18n="learn_cmp_1_3"></td>
+                    <td data-i18n="learn_cmp_1_4"></td>
+                  </tr>
+                  <tr>
+                    <td data-i18n="learn_cmp_2_0"></td>
+                    <td data-i18n="learn_cmp_2_1"></td>
+                    <td data-i18n="learn_cmp_2_2"></td>
+                    <td data-i18n="learn_cmp_2_3"></td>
+                    <td data-i18n="learn_cmp_2_4"></td>
+                  </tr>
+                  <tr>
+                    <td data-i18n="learn_cmp_3_0"></td>
+                    <td data-i18n="learn_cmp_3_1"></td>
+                    <td data-i18n="learn_cmp_3_2"></td>
+                    <td data-i18n="learn_cmp_3_3"></td>
+                    <td data-i18n="learn_cmp_3_4"></td>
+                  </tr>
+                  <tr>
+                    <td data-i18n="learn_cmp_4_0"></td>
+                    <td data-i18n="learn_cmp_4_1"></td>
+                    <td data-i18n="learn_cmp_4_2"></td>
+                    <td data-i18n="learn_cmp_4_3"></td>
+                    <td data-i18n="learn_cmp_4_4"></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <section id="history">
+            <h2 data-i18n="learn_hist_h">A short history of SWGs</h2>
+            <p data-i18n="learn_hist_p1"></p>
+            <p data-i18n="learn_hist_p2"></p>
+          </section>
+
+          <section id="future">
+            <h2 data-i18n="learn_fut_h">How are SWGs evolving?</h2>
+            <p data-i18n="learn_fut_p1"></p>
+            <ul class="learn-list">
+              <li data-i18n="learn_fut_1"></li>
+              <li data-i18n="learn_fut_2"></li>
+              <li data-i18n="learn_fut_3"></li>
+            </ul>
+          </section>
+
+          <section id="amastan-roadmap">
+            <h2 data-i18n="learn_road_h">What Amastan plans to implement</h2>
+            <p data-i18n="learn_road_lead"></p>
+            <div class="learn-callout">
+              <p data-i18n="learn_road_note"></p>
+            </div>
+            <div class="dl-grid">
+              <article class="card"><span class="badge" data-i18n="badge_swg"></span><h3 data-i18n="learn_road_1_t"></h3><p data-i18n="learn_road_1_d"></p></article>
+              <article class="card"><span class="badge" data-i18n="badge_casb"></span><h3 data-i18n="learn_road_2_t"></h3><p data-i18n="learn_road_2_d"></p></article>
+              <article class="card"><span class="badge" data-i18n="badge_dlp"></span><h3 data-i18n="learn_road_3_t"></h3><p data-i18n="learn_road_3_d"></p></article>
+              <article class="card"><span class="badge" data-i18n="badge_iam"></span><h3 data-i18n="learn_road_4_t"></h3><p data-i18n="learn_road_4_d"></p></article>
+              <article class="card"><span class="badge" data-i18n="badge_siem"></span><h3 data-i18n="learn_road_5_t"></h3><p data-i18n="learn_road_5_d"></p></article>
+              <article class="card"><span class="badge" data-i18n="badge_soar"></span><h3 data-i18n="learn_road_6_t"></h3><p data-i18n="learn_road_6_d"></p></article>
+              <article class="card"><span class="badge" data-i18n="badge_ips"></span><h3 data-i18n="learn_road_7_t"></h3><p data-i18n="learn_road_7_d"></p></article>
+              <article class="card"><span class="badge" data-i18n="badge_xdr"></span><h3 data-i18n="learn_road_8_t"></h3><p data-i18n="learn_road_8_d"></p></article>
+              <article class="card"><span class="badge" data-i18n="badge_ztna"></span><h3 data-i18n="learn_road_9_t"></h3><p data-i18n="learn_road_9_d"></p></article>
+              <article class="card"><span class="badge" data-i18n="badge_soon"></span><h3 data-i18n="learn_road_10_t"></h3><p data-i18n="learn_road_10_d"></p></article>
+              <article class="card"><span class="badge" data-i18n="badge_saas"></span><h3 data-i18n="learn_road_11_t"></h3><p data-i18n="learn_road_11_d"></p></article>
+            </div>
+          </section>
+
+          <section id="amastan-after">
+            <h2 data-i18n="learn_after_h">How Amastan looks after these features</h2>
+            <p data-i18n="learn_after_lead"></p>
+            <div class="steps">
+              <div class="step"><b>1</b><span data-i18n="learn_after_1"></span></div>
+              <div class="step"><b>2</b><span data-i18n="learn_after_2"></span></div>
+              <div class="step"><b>3</b><span data-i18n="learn_after_3"></span></div>
+              <div class="step"><b>4</b><span data-i18n="learn_after_4"></span></div>
+            </div>
+            <ul class="learn-list">
+              <li data-i18n="learn_after_li1"></li>
+              <li data-i18n="learn_after_li2"></li>
+              <li data-i18n="learn_after_li3"></li>
+              <li data-i18n="learn_after_li4"></li>
+            </ul>
+            <div class="learn-callout">
+              <p data-i18n="learn_after_note"></p>
+            </div>
+            <p><a href="features.html" data-i18n="learn_after_link">See the full features &amp; roadmap page</a></p>
+          </section>
+
+          <section id="choose">
+            <h2 data-i18n="learn_choose_h">How to choose the right SWG</h2>
+            <ul class="learn-list">
+              <li data-i18n="learn_choose_1"></li>
+              <li data-i18n="learn_choose_2"></li>
+              <li data-i18n="learn_choose_3"></li>
+              <li data-i18n="learn_choose_4"></li>
+              <li data-i18n="learn_choose_5"></li>
+            </ul>
+            <p data-i18n="learn_choose_p"></p>
+          </section>
+
+          <section id="faq">
+            <h2 data-i18n="learn_faq_h">Secure web gateway FAQs</h2>
+            <div class="faq-list">
+              <details><summary data-i18n="learn_faq_1_q"></summary><p data-i18n="learn_faq_1_a"></p></details>
+              <details><summary data-i18n="learn_faq_2_q"></summary><p data-i18n="learn_faq_2_a"></p></details>
+              <details><summary data-i18n="learn_faq_3_q"></summary><p data-i18n="learn_faq_3_a"></p></details>
+              <details><summary data-i18n="learn_faq_4_q"></summary><p data-i18n="learn_faq_4_a"></p></details>
+              <details><summary data-i18n="learn_faq_5_q"></summary><p data-i18n="learn_faq_5_a"></p></details>
+              <details><summary data-i18n="learn_faq_6_q"></summary><p data-i18n="learn_faq_6_a"></p></details>
+            </div>
+          </section>
+
+          <aside class="learn-cta">
+            <h2 data-i18n="learn_cta_h">Self-hosted SWG with Amastan</h2>
+            <p data-i18n="learn_cta_p"></p>
+            <div class="actions">
+              <a class="btn btn-primary" href="index.html#contact" data-i18n="cta_pilot">Request a pilot</a>
+              <a class="btn btn-ghost" href="features.html" data-i18n="cta_features_full">Full features &amp; roadmap</a>
+              <a class="btn btn-ghost" href="index.html" data-i18n="cta_home">Back home</a>
+            </div>
+          </aside>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>
+        <a class="brand footer-brand" href="index.html"><img class="brand-mark brand-mark-on-dark" src="assets/brand/logo-mark.png" alt="" width="40" height="47" /><img class="brand-mark brand-mark-on-light" src="assets/brand/logo-outline.png" alt="" width="40" height="46" /><span class="brand-text">Amastan</span><span class="brand-badge">AI-SWG</span></a>
+        <p class="footer-tag" data-i18n="footer_tag">Self-hosted AI Secure Web Gateway</p>
+      </div>
+      <div>
+        <h4 data-i18n="footer_hq_label">Headquarters</h4>
+        <p data-i18n="footer_hq">Algiers, Algeria</p>
+      </div>
+      <div>
+        <h4 data-i18n="footer_contact_label">Contact</h4>
+        <p><a href="tel:+213660617078">+213 660 61 70 78</a></p>
+        <p><a href="mailto:kabdi.kalboddine@gmail.com">kabdi.kalboddine@gmail.com</a></p>
+      </div>
+      <div>
+        <h4 data-i18n="footer_links_label">Links</h4>
+        <div class="footer-links">
+          <a href="check-url.html" data-i18n="nav_check">Check URL</a>
+          <a href="urls-checked.html" data-i18n="nav_checked">Checked</a>
+          <a href="pilot.html" data-i18n="nav_pilot">Pilot</a>
+          <a href="about.html" data-i18n="nav_about">About</a>
+          <a href="what-is-swg.html" data-i18n="nav_learn">What is SWG</a>
+          <a href="privacy.html" data-i18n="nav_privacy">Privacy</a>
+        </div>
+      </div>
+    </div>
+    <div class="wrap footer-copy">
+      <p>© 2026 Amastan. <span data-i18n="footer_rights">All rights reserved.</span></p>
+    </div>
+  </footer>
+  <script src="app.js?v=aboutfeat1"></script>
+</body>
+</html>

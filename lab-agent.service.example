@@ -1,0 +1,15 @@
+[Unit]
+Description=Amastan Check URL lab agent (pull jobs, classify on localhost)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/swg/swg-project/website
+EnvironmentFile=-/home/swg/swg-project/website/lab-agent.env
+ExecStart=/usr/bin/python3 /home/swg/swg-project/website/lab-agent.py
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

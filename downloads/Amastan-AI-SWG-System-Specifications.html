@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Amastan AI-SWG — System Specifications</title>
+  <style>
+:root {
+  --navy: #00008a; --royal: #0075fd; --ink: #0b1440; --muted: #5b6b98;
+  --line: #d7e0f5; --soft: #f5f8ff; --win: #005fd1;
+}
+* { box-sizing: border-box; }
+body {
+  font-family: "Segoe UI", system-ui, sans-serif;
+  color: var(--ink);
+  max-width: 900px;
+  margin: 24px auto;
+  padding: 0 16px 40px;
+  line-height: 1.5;
+  font-size: 0.95rem;
+  background: #fff;
+}
+.tag { color: var(--royal); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 750; margin: 0 0 0.4rem; }
+h1 { font-size: 1.55rem; color: var(--navy); margin: 0 0 0.4rem; letter-spacing: -0.02em; line-height: 1.15; }
+.edge { font-weight: 650; margin: 0 0 1rem; max-width: 46rem; }
+h2 { font-size: 1.05rem; color: var(--navy); border-bottom: 1px solid var(--line); padding-bottom: 0.25rem; margin: 1.35rem 0 0.55rem; }
+h3 { font-size: 0.95rem; color: var(--navy); margin: 1rem 0 0.4rem; }
+p, li { margin: 0.35rem 0; }
+.muted { color: var(--muted); font-size: 0.85rem; }
+ul, ol { padding-inline-start: 1.2rem; }
+table { width: 100%; border-collapse: collapse; margin: 0.5rem 0 0.85rem; font-size: 0.86rem; }
+th, td { border: 1px solid var(--line); padding: 0.5rem 0.65rem; text-align: start; vertical-align: top; }
+th { background: linear-gradient(135deg, rgba(0,117,253,.10), rgba(68,244,180,.10)); color: var(--navy); font-weight: 750; }
+td:first-child { font-weight: 650; }
+code, pre { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.88em; }
+code { background: var(--soft); border: 1px solid var(--line); border-radius: 5px; padding: 0.05rem 0.35rem; }
+pre { background: #0b1440; color: #e8eefc; border-radius: 10px; padding: 0.85rem 1rem; overflow-x: auto; }
+.note { background: var(--soft); border: 1px solid var(--line); border-left: 4px solid var(--royal); border-radius: 0 10px 10px 0; padding: 0.7rem 0.9rem; margin: 0.7rem 0; }
+.badge { display: inline-block; font-size: 0.65rem; font-weight: 750; letter-spacing: .04em; text-transform: uppercase; color: var(--royal); background: rgba(0,117,253,.08); border: 1px solid rgba(0,117,253,.22); border-radius: 999px; padding: .05rem .4rem; }
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0.55rem; }
+.card { border: 1px solid var(--line); border-radius: 10px; padding: 0.6rem 0.75rem; background: #fff; }
+.card strong { display: block; color: var(--navy); margin-bottom: 0.15rem; }
+.card span { color: #334; font-size: 0.84rem; }
+.cta { margin-top: 1.2rem; padding: 0.8rem 0.95rem; background: linear-gradient(135deg, #eef4ff, #e8fff6); border: 1px solid rgba(0,117,253,.25); border-radius: 10px; }
+.cta a { color: var(--royal); font-weight: 650; }
+@media (max-width: 720px) { .grid-2 { grid-template-columns: 1fr; } }
+@media print { body { margin: 0; } a { color: inherit; text-decoration: none; } }
+</style>
+</head>
+<body>
+  <p class="tag">Amastan · Pilot RC1 · System Specifications</p>
+  <h1>Amastan AI-SWG — System Specifications</h1>
+  <p class="edge">Hardware, network, capacity by user scale, security properties, and documentation set for architects and procurement.</p>
+  <p><strong>Product:</strong> Amastan AI Secure Web Gateway<br/>
+  <strong>Release:</strong> Pilot RC1<br/>
+  <strong>Audience:</strong> IT architects, security engineers, procurement<br/>
+  <strong>Updated:</strong> 2026-08-23</p>
+
+  <h2>1. Product summary</h2>
+  <p>Amastan is a <strong>self-hosted AI Secure Web Gateway</strong>. It inspects outbound web traffic, applies allow / block / optional Remote Browser Isolation (RBI) decisions, and keeps verdicts and logs on infrastructure you control.</p>
+  <p><strong>Verdicts:</strong> Allow · Block · Isolate (RBI)</p>
+
+  <h2>2. What the platform includes</h2>
+  <table>
+    <thead><tr><th>Area</th><th>What you get</th></tr></thead>
+    <tbody>
+      <tr><td>Web filtering</td><td>Allow / block / optional safer remote browse (RBI)</td></tr>
+      <tr><td>AI assist</td><td>Helps judge unknown or grey-zone websites</td></tr>
+      <tr><td>Management</td><td>Operator console (React Admin UI), Keycloak-ready OIDC</td></tr>
+      <tr><td>Identity</td><td>LDAP / Active Directory for user-aware policy</td></tr>
+      <tr><td>Data on site</td><td>Policy cache, decision logs, optional vector / object stores as configured</td></tr>
+      <tr><td>Observability</td><td>Prometheus, Grafana, Loki / Promtail</td></tr>
+      <tr><td>Optional licensed</td><td>DLP, Shadow IT / unofficial cloud apps, email-link controls</td></tr>
+    </tbody>
+  </table>
+
+  <h2>3. Deployment model</h2>
+  <ul>
+    <li>Appliance-oriented <strong>Docker Compose / HA</strong> stack</li>
+    <li>Lab and pilot images distributed as <strong>KVM/QEMU qcow2</strong> (sanitized pilot build)</li>
+    <li>Single-site today; multi-site fleet on roadmap</li>
+  </ul>
+
+  <h2>4. Recommended sizing (lab &amp; by named users)</h2>
+  <h3>Lab / pilot profiles</h3>
+  <table>
+    <thead><tr><th>Profile</th><th>vCPU</th><th>RAM</th><th>Disk</th><th>Notes</th></tr></thead>
+    <tbody>
+      <tr><td>Lab eval</td><td>8+</td><td>32 GB</td><td>200+ GB</td><td>Functional demo + QA</td></tr>
+      <tr><td>Small pilot</td><td>16</td><td>64 GB</td><td>500 GB+</td><td>Light production-like load</td></tr>
+      <tr><td>HA pilot</td><td>2× nodes</td><td>64 GB each</td><td>500 GB+ each</td><td>Dual-node HA pattern</td></tr>
+    </tbody>
+  </table>
+  <h3>Capacity by named users (system-test planning)</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Named users</th>
+        <th>Peak concurrent (est.)</th>
+        <th>Nodes</th>
+        <th>vCPU / node</th>
+        <th>RAM / node</th>
+        <th>Disk / node</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>500</td><td>~50–100</td><td>1 (HA optional)</td><td>12–16</td><td>48–64 GB</td><td>500 GB</td></tr>
+      <tr><td><strong>2,000</strong></td><td>~200–400</td><td><strong>2 (HA)</strong></td><td><strong>16</strong></td><td><strong>64 GB</strong></td><td><strong>1 TB</strong></td></tr>
+      <tr><td><strong>4,000</strong></td><td>~400–800</td><td><strong>2 (HA)</strong></td><td><strong>24</strong></td><td><strong>96 GB</strong></td><td><strong>1.5 TB</strong></td></tr>
+      <tr><td>10,000</td><td>~1,000–2,000</td><td>2–3</td><td>32</td><td>128 GB</td><td>2 TB</td></tr>
+      <tr><td><strong>20,000</strong></td><td>~2,000–4,000</td><td><strong>3–4</strong></td><td><strong>32–48</strong></td><td><strong>128–192 GB</strong></td><td><strong>4 TB</strong></td></tr>
+    </tbody>
+  </table>
+  <div class="note">Exact sizing depends on concurrent users, TLS intercept policy, RBI rate, and ML model mix. Validate with a scoped load test during the pilot before procurement lock-in.</div>
+
+  <h2>5. Network &amp; ports (typical lab)</h2>
+  <table>
+    <thead><tr><th>Service</th><th>Port (host)</th><th>Purpose</th></tr></thead>
+    <tbody>
+      <tr><td>HTTP(S) proxy</td><td>80 / 443</td><td>User web traffic</td></tr>
+      <tr><td>Sidecar API</td><td>8010</td><td>Classify / health (internal)</td></tr>
+      <tr><td>Admin UI</td><td>8080</td><td>Operator console</td></tr>
+      <tr><td>Identity</td><td>Keycloak (as deployed)</td><td>Admin / directory</td></tr>
+    </tbody>
+  </table>
+  <p>Harden exposure before production; do not publish management ports to the internet.</p>
+
+  <h2>6. Identity &amp; integrations</h2>
+  <ul>
+    <li>LDAP / Active Directory federation</li>
+    <li>Directory users &amp; endpoint agent path (Windows)</li>
+    <li>SIEM-oriented export (syslog / object storage / webhooks as configured)</li>
+    <li>Azure AD / SAML / OIDC hardening on roadmap</li>
+  </ul>
+
+  <h2>7. Security properties</h2>
+  <ul>
+    <li>On-prem verdicts and audit trail</li>
+    <li>Policy allowlist / blocklist / overrides / SNI bypass controls</li>
+    <li>Tamper-evident audit chain (as implemented in pilot)</li>
+    <li>Optional licensed modules: DLP, email security, shadow IT discovery</li>
+  </ul>
+
+  <h2>8. Pilot appliance artifact</h2>
+  <table>
+    <thead><tr><th>Item</th><th>Value</th></tr></thead>
+    <tbody>
+      <tr><td>Image</td><td><code>ai-swg-v1.0.1-pilot-rc1-sanitized.qcow2</code></td></tr>
+      <tr><td>Format</td><td>qcow2 (KVM/QEMU)</td></tr>
+      <tr><td>Integrity</td><td>SHA-256 published with download entitlement</td></tr>
+      <tr><td>Access</td><td>Request via official site contact (not anonymous public mirror)</td></tr>
+    </tbody>
+  </table>
+
+  <h2>9. Documentation set</h2>
+  <table>
+    <thead><tr><th>Document</th><th>Contents</th></tr></thead>
+    <tbody>
+      <tr><td>User / Client Guide</td><td>First login, dashboard, day-2 operator flows</td></tr>
+      <tr><td>Admin Guide</td><td>Deployment, HA, identity, policies, capacity, roadmap</td></tr>
+      <tr><td>System Specifications</td><td>This document</td></tr>
+      <tr><td>CISO One-Pager</td><td>Executive brief (EN / FR / AR)</td></tr>
+    </tbody>
+  </table>
+
+  <h2>10. Roadmap (high level)</h2>
+  <ul>
+    <li>Production hardening and stronger IdP (Azure AD / SAML / OIDC)</li>
+    <li>Harder filter bypass resistance; safer AI-tool use (ChatGPT / Copilot)</li>
+    <li>Private access (ZTNA), multi-site fleet, richer SIEM / audit packs</li>
+    <li>Sector packs (banks, government, education, partners)</li>
+  </ul>
+
+  <div class="cta">
+    <strong>Next step:</strong>
+    <a href="https://amastansolution.com/pilot.html">Request a pilot</a>
+    · email <a href="mailto:kabdi.kalboddine@gmail.com?subject=Amastan%20pilot%20request">kabdi.kalboddine@gmail.com</a>
+  </div>
+  <p class="muted">© Amastan — Pilot RC1 system specifications. Verify before production procurement. Print → Save as PDF if needed.</p>
+</body>
+</html>
