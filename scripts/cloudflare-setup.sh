@@ -89,6 +89,18 @@ else
   echo "==> skip agent secret (set AMASTAN_AGENT_TOKEN and re-run scripts/set-agent-secret.sh)"
 fi
 
+if [[ -n "${AMASTAN_INTAKE_HMAC_SECRET:-}" ]]; then
+  echo "==> set AMASTAN_INTAKE_HMAC_SECRET Pages secret"
+  AMASTAN_INTAKE_HMAC_SECRET="$AMASTAN_INTAKE_HMAC_SECRET" \
+    AMASTAN_INTAKE_URL="${AMASTAN_INTAKE_URL:-}" \
+    CF_API_TOKEN="$CF_API_TOKEN" \
+    CF_ACCOUNT_ID="$CF_ACCOUNT_ID" \
+    CF_PAGES_PROJECT="$PROJECT" \
+    "$ROOT/scripts/set-intake-secret.sh"
+else
+  echo "==> skip intake secret (set AMASTAN_INTAKE_HMAC_SECRET and AMASTAN_INTAKE_URL, then scripts/set-intake-secret.sh)"
+fi
+
 echo "==> attach custom domains ${DOMAIN} and www.${DOMAIN}"
 attach_domain() {
   local host="$1"

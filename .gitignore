@@ -12,6 +12,7 @@ venv/
 
 # Cloudflare / wrangler local state
 .wrangler/
+.dev.vars
 node_modules/
 
 # Runtime / logs

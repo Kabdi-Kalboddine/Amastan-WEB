@@ -86,6 +86,44 @@
     syncNavToggleLabel();
   }
 
+  function readUtm() {
+    const fromQuery = () => {
+      const q = new URLSearchParams(window.location.search);
+      const utm = {};
+      const source = (q.get("utm_source") || "").trim();
+      const medium = (q.get("utm_medium") || "").trim();
+      const campaign = (q.get("utm_campaign") || "").trim();
+      if (source) utm.source = source;
+      if (medium) utm.medium = medium;
+      if (campaign) utm.campaign = campaign;
+      return Object.keys(utm).length ? utm : null;
+    };
+    const incoming = fromQuery();
+    if (incoming) {
+      try {
+        sessionStorage.setItem("amastan_utm", JSON.stringify(incoming));
+      } catch {
+        /* ignore quota */
+      }
+      return incoming;
+    }
+    try {
+      const saved = JSON.parse(sessionStorage.getItem("amastan_utm") || "null");
+      if (saved && typeof saved === "object" && !Array.isArray(saved)) {
+        const utm = {};
+        if (typeof saved.source === "string" && saved.source.trim()) utm.source = saved.source.trim();
+        if (typeof saved.medium === "string" && saved.medium.trim()) utm.medium = saved.medium.trim();
+        if (typeof saved.campaign === "string" && saved.campaign.trim()) utm.campaign = saved.campaign.trim();
+        return Object.keys(utm).length ? utm : undefined;
+      }
+    } catch {
+      /* ignore */
+    }
+    return undefined;
+  }
+
+  readUtm();
+
   function sendMailto(payload) {
     const subject = encodeURIComponent(
       payload.interest === "pilot"
@@ -102,7 +140,12 @@
     const res = await fetch("/api/contact", {
       method: "POST",
       headers: { "Content-Type": "application/json", Accept: "application/json" },
-      body: JSON.stringify({ ...payload, language: lang, website: payload.website || "" }),
+      body: JSON.stringify({
+        ...payload,
+        language: lang,
+        website: payload.website || "",
+        utm: payload.utm || undefined,
+      }),
     });
     const data = await res.json().catch(() => ({}));
     if (!res.ok || !data.ok) {
@@ -127,6 +170,7 @@
       interest: String(data.interest || "pilot").trim() || "pilot",
       message: String(data.message || "").trim(),
       website: String(data.website || "").trim(),
+      utm: readUtm(),
     };
     if (!payload.name || !payload.email) {
       if (msg) {

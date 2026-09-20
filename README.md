@@ -7,7 +7,7 @@ This repository is the **marketing site** only. It is not the appliance (`swg-pr
 
 Owner: **Kabdi-Kalboddine** (Kalboddine Mohamed Charif Kabdi).
 
-Multi-language site (EN / FR / AR). Contact form uses Resend (Pages Function).
+Multi-language site (EN / FR / AR). Contact and pilot forms POST `/api/contact` (Pages Function), which HMAC-signs the raw JSON and forwards it to SaaS `POST /public/intake`. Resend is used only if that webhook fails.
 
 Check URL is **pull-based**: the website never opens a connection to your PC.
 Your appliance agent polls the public mailbox, classifies on localhost `:8010`, then writes the verdict back.
@@ -66,12 +66,23 @@ export AMASTAN_AGENT_TOKEN='…'
 ./scripts/set-agent-secret.sh
 ```
 
+Intake webhook (same HMAC secret as the VPS):
+
+```bash
+export AMASTAN_INTAKE_HMAC_SECRET='…'
+export AMASTAN_INTAKE_URL='https://saas.example.com/public/intake'
+./scripts/set-intake-secret.sh
+```
+
 Bindings:
 
 | Binding / secret | Purpose |
 |------------------|---------|
 | `CHECK_HISTORY` (KV) | Jobs, queue, history, last agent ping |
 | `AMASTAN_AGENT_TOKEN` | Bearer token for `/api/agent/*` |
+| `AMASTAN_INTAKE_HMAC_SECRET` | HMAC key for SaaS `POST /public/intake` (same as VPS) |
+| `AMASTAN_INTAKE_URL` | SaaS intake URL, e.g. `https://saas.example.com/public/intake` |
+| `RESEND_API_KEY` | Fallback mailer if the intake webhook fails |
 
 ### 2) Run agent on the appliance
 
@@ -108,6 +119,7 @@ If the agent stops, Check URL returns `lab_offline` (503) when the token is conf
 
 | Method | Path | Who |
 |--------|------|-----|
+| `POST` | `/api/contact` | Browser (HMAC-forwarded to SaaS `/public/intake`) |
 | `POST` | `/api/check-url` | Browser |
 | `GET` | `/api/check-url/jobs/{id}` | Browser poll |
 | `POST` | `/api/check-url/jobs/{id}/seen` | Browser displayed live result |
