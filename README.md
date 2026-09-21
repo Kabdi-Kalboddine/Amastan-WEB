@@ -35,6 +35,11 @@ Visitor → polls /api/check-url/jobs/:id until new_verdict
 | About | `about.html` |
 | What is SWG | `what-is-swg.html` |
 | Privacy | `privacy.html` |
+| **Community** (public rulebook) | `community.html` (`/community`) |
+| Community terms (SaaS Q&A legal) | `community-terms.html` |
+| DMCA / illegal content | `dmca.html` |
+
+Community **Q&A lives in the Amastan customer and partner portal** (SaaS). This marketing site publishes `/community` (rules / never-list), `/community-terms` (content license, DSAR), and `/dmca` only. Do not point visitors at GitHub Discussions. Do not add GitHub SSO. Intake HMAC (`POST /api/contact` → SaaS `/public/intake`) is unchanged.
 
 ## Local run (demo only, no agent)
 

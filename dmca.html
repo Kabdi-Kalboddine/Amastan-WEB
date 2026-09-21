@@ -3,13 +3,15 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Amastan — Check URL</title>
-  <meta name="description" content="Paste a URL and see how Amastan AI-SWG would classify it: allow, block, or RBI." />
+  <title>Amastan — DMCA and illegal content reports</title>
+  <meta name="description" content="Report copyright infringement or illegal content on the Amastan website or Community in the customer and partner portal." />
+  <link rel="canonical" href="https://amastansolution.com/dmca" />
+  <meta name="robots" content="index, follow" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="icon" href="assets/brand/logo-mark.png" type="image/png" />
-  <link rel="stylesheet" href="styles.css?v=urlschecked1" />
+  <link rel="stylesheet" href="styles.css?v=comm2" />
   <script>
     (function () {
       var t = localStorage.getItem("amastan_theme") || "dark";
@@ -27,7 +29,7 @@
         <a href="pilot.html" data-i18n="nav_pilot">Pilot</a>
         <a href="features.html" data-i18n="nav_features">Features</a>
         <a href="what-is-swg.html" data-i18n="nav_learn">What is SWG</a>
-        <a href="check-url.html" data-i18n="nav_check" aria-current="page">Check URL</a>
+        <a href="check-url.html" data-i18n="nav_check">Check URL</a>
         <a href="urls-checked.html" data-i18n="nav_checked">Checked</a>
         <a href="about.html" data-i18n="nav_about">About</a>
         <a href="resources.html" data-i18n="nav_downloads">Resources</a>
@@ -54,56 +56,53 @@
   </header>
 
   <main>
-    <section class="hero page-hero check-hero">
-      <div class="wrap check-hero-grid">
-        <div>
-          <div class="check-hero-top">
-            <span id="lab-badge" class="lab-badge lab-badge-demo">Demo policy</span>
-          </div>
-          <h1 data-i18n="check_title">Check a URL</h1>
-          <p class="lead" data-i18n="check_lead">Paste a URL. Get allow, block, or RBI — the same style of verdict as the operator console.</p>
-          <p class="check-history-link"><a href="urls-checked.html" data-i18n="checked_see_list">See previously checked URLs</a></p>
-        </div>
+    <section class="hero page-hero">
+      <div class="wrap">
+        <p class="kicker" data-i18n="dmca_kicker">Legal</p>
+        <h1 data-i18n="dmca_title">DMCA and illegal content reports</h1>
+        <p class="lead" data-i18n="dmca_lead">How to report copyright infringement or illegal content related to the Amastan website or Community.</p>
       </div>
     </section>
 
-    <section class="section check-section" id="check">
-      <div class="wrap">
-        <form class="check-panel" id="check-url-form" novalidate>
-          <label class="check-label" for="check-url-input" data-i18n="check_label">URL to classify</label>
-          <div class="check-row">
-            <input
-              id="check-url-input"
-              name="url"
-              type="url"
-              inputmode="url"
-              autocomplete="url"
-              spellcheck="false"
-              required
-              data-i18n-placeholder="check_placeholder"
-              placeholder="https://example.com/path"
-            />
-            <button type="submit" class="btn btn-primary" id="check-submit" data-i18n="check_submit">Get verdict</button>
-          </div>
-          <p class="check-hint" data-i18n="check_hint">Try a sample, or paste your own URL.</p>
-          <div class="check-samples" role="group" aria-label="Sample URLs">
-            <button type="button" class="check-chip" data-sample="https://example.com">example.com</button>
-            <button type="button" class="check-chip" data-sample="https://wikipedia.org">wikipedia.org</button>
-            <button type="button" class="check-chip" data-sample="http://testsafebrowsing.appspot.com/s/phishing.html">GSB phishing</button>
-            <button type="button" class="check-chip" data-sample="http://testsafebrowsing.appspot.com/s/malware.html">GSB malware</button>
-            <button type="button" class="check-chip" data-sample="http://testsafebrowsing.appspot.com/s/unwanted.html">GSB unwanted</button>
-          </div>
-        </form>
-
-        <p class="form-msg" id="check-msg" hidden></p>
-
-        <aside class="check-note">
-          <div class="actions">
-            <a class="btn btn-primary" href="pilot.html" data-i18n="cta_pilot">Request a pilot</a>
-            <a class="btn btn-ghost" href="urls-checked.html" data-i18n="nav_checked">Checked</a>
-            <a class="btn btn-ghost" href="features.html" data-i18n="cta_features">See features</a>
-          </div>
-        </aside>
+    <section class="section learn-section">
+      <div class="wrap learn-article" style="max-width:46rem">
+        <section>
+          <h2 data-i18n="dmca_site_h">Content on this website</h2>
+          <p data-i18n="dmca_site_p">For material hosted on amastansolution.com, email the notice address with all of the following:</p>
+          <ul class="learn-list">
+            <li data-i18n="dmca_site_1">Your contact name, address, telephone number, and email</li>
+            <li data-i18n="dmca_site_2">Description of the copyrighted work you own</li>
+            <li data-i18n="dmca_site_3">The URL of the allegedly infringing material</li>
+            <li data-i18n="dmca_site_4">A statement of good-faith belief that the use is not authorized</li>
+            <li data-i18n="dmca_site_5">A statement under penalty of perjury that the information is accurate and that you are authorized to act</li>
+            <li data-i18n="dmca_site_6">Your physical or electronic signature</li>
+          </ul>
+        </section>
+        <section>
+          <h2 data-i18n="dmca_comm_h">Content in Amastan Community</h2>
+          <p data-i18n="dmca_comm_p">Community threads live in the Amastan customer and partner portals. Report copyright or illegal community content using the notice address below. Include the portal URL of the material when you have it.</p>
+        </section>
+        <section>
+          <h2 data-i18n="dmca_illegal_h">Illegal content</h2>
+          <p data-i18n="dmca_illegal_p">To report unlawful content other than copyright, email staff with the URL, a short description, and why it is unlawful. Do not attach malware, packet captures, or secrets in the report.</p>
+        </section>
+        <section>
+          <h2 data-i18n="dmca_counter_h">Counter-notice</h2>
+          <p data-i18n="dmca_counter_p">If your material was removed and you believe that was a mistake, email a counter-notice with your contact details, identification of the removed material, a statement under penalty of perjury of good-faith belief, consent to jurisdiction, and your signature.</p>
+        </section>
+        <section>
+          <h2 data-i18n="dmca_contact_h">Notice address</h2>
+          <p data-i18n="dmca_contact_p">Send DMCA and illegal-content reports to:</p>
+          <p><a href="mailto:kabdi.kalboddine@gmail.com?subject=Amastan%20DMCA%20or%20illegal%20content%20report">kabdi.kalboddine@gmail.com</a></p>
+          <p class="comm-ext-links">
+            <a href="community-terms.html" data-i18n="nav_community_tos">Community terms</a>
+            <span aria-hidden="true">·</span>
+            <a href="privacy.html" data-i18n="nav_privacy">Privacy</a>
+            <span aria-hidden="true">·</span>
+            <a href="community.html" data-i18n="nav_community">Community</a>
+          </p>
+        </section>
+        <p class="compare-note" data-i18n="dmca_updated">Last updated: September 2026.</p>
       </div>
     </section>
   </main>
@@ -134,7 +133,7 @@
           <a href="what-is-swg.html" data-i18n="nav_learn">What is SWG</a>
           <a href="community-terms.html" data-i18n="nav_community_tos">Community terms</a>
           <a href="privacy.html" data-i18n="nav_privacy">Privacy</a>
-          <a href="dmca.html" data-i18n="nav_dmca">DMCA</a>
+          <a href="dmca.html" data-i18n="nav_dmca" aria-current="page">DMCA</a>
         </div>
       </div>
     </div>
@@ -142,13 +141,6 @@
       <p>© 2026 Amastan. <span data-i18n="footer_rights">All rights reserved.</span></p>
     </div>
   </footer>
-  <script src="app.js?v=urlschecked1"></script>
-  <div id="check-wait-overlay" class="check-wait-overlay" hidden>
-    <div class="check-wait-card">
-      <img class="check-wait-logo" src="assets/brand/logo-mark.png" alt="" width="72" height="84" />
-      <p class="check-wait-title" data-i18n="check_wait_title">Checking this URL…</p>
-      <p class="check-wait-sub" data-i18n="check_wait_sub">Sending it to the lab. You will see the verdict on the next page.</p>
-    </div>
-  </div>
+  <script src="app.js?v=comm2"></script>
 </body>
 </html>

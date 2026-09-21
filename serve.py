@@ -120,6 +120,14 @@ class Handler(SimpleHTTPRequestHandler):
                 return
             self._json_response(200, job)
             return
+        # Cloudflare Pages-style: /community -> community.html
+        if path != "/" and not path.startswith("/api/"):
+            name = path.lstrip("/")
+            if "/" not in name and "." not in name:
+                html = ROOT / f"{name}.html"
+                if html.is_file():
+                    parsed = urlparse(self.path)
+                    self.path = f"/{html.name}" + (f"?{parsed.query}" if parsed.query else "")
         super().do_GET()
 
     def log_message(self, fmt: str, *args) -> None:

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Amastan — Community</title>
+  <meta name="description" content="Amastan Community Q&amp;A lives in the customer and partner portal. This page is the public rulebook: terms, never-list, and how to participate." />
+  <link rel="canonical" href="https://amastansolution.com/community" />
+  <meta name="robots" content="index, follow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="icon" href="assets/brand/logo-mark.png" type="image/png" />
+  <link rel="stylesheet" href="styles.css?v=comm2" />
+  <script>
+    (function () {
+      var t = localStorage.getItem("amastan_theme") || "dark";
+      document.documentElement.setAttribute("data-theme", t === "light" ? "light" : "dark");
+    })();
+  </script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="nav-backdrop" id="nav-backdrop" hidden></div>
+    <div class="wrap topbar-inner">
+      <a class="brand" href="index.html"><img class="brand-mark brand-mark-on-dark" src="assets/brand/logo-mark.png" alt="" width="40" height="47" /><img class="brand-mark brand-mark-on-light" src="assets/brand/logo-outline.png" alt="" width="40" height="46" /><span class="brand-text">Amastan</span><span class="brand-badge">AI-SWG</span></a>
+      <nav class="nav" id="primary-nav" aria-label="Primary">
+        <a href="use-cases.html" data-i18n="nav_usecases">Use cases</a>
+        <a href="pilot.html" data-i18n="nav_pilot">Pilot</a>
+        <a href="features.html" data-i18n="nav_features">Features</a>
+        <a href="what-is-swg.html" data-i18n="nav_learn">What is SWG</a>
+        <a href="check-url.html" data-i18n="nav_check">Check URL</a>
+        <a href="urls-checked.html" data-i18n="nav_checked">Checked</a>
+        <a href="about.html" data-i18n="nav_about">About</a>
+        <a href="resources.html" data-i18n="nav_downloads">Resources</a>
+        <a href="community.html" data-i18n="nav_community" aria-current="page">Community</a>
+        <a href="index.html#contact" data-i18n="nav_contact">Contact</a>
+        <a class="btn btn-primary nav-cta" href="pilot.html" data-i18n="cta_pilot">Request a pilot</a>
+      </nav>
+      <div class="topbar-tools">
+        <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">
+          <span class="nav-toggle-bars" aria-hidden="true"><span></span><span></span><span></span></span>
+        </button>
+        <div class="lang-menu" id="lang-menu">
+          <button type="button" class="lang-toggle" id="lang-toggle" aria-expanded="false" aria-haspopup="listbox" aria-controls="lang-dropdown">EN</button>
+          <div class="lang-dropdown" id="lang-dropdown" role="listbox" hidden>
+            <button type="button" role="option" data-lang="en" class="active">EN</button>
+            <button type="button" role="option" data-lang="fr">FR</button>
+            <button type="button" role="option" data-lang="ar">AR</button>
+          </div>
+        </div>
+        <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle color theme">Dark</button>
+        <a class="btn btn-primary topbar-cta" href="pilot.html" data-i18n="nav_cta">Request a pilot</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero page-hero comm-hero">
+      <div class="wrap">
+        <p class="kicker" data-i18n="comm_kicker">Community</p>
+        <h1 data-i18n="comm_title">Amastan Community</h1>
+        <p class="lead" data-i18n="comm_lead">Q&amp;A lives in the Amastan customer and partner portal. This page is the public rulebook. Sign in to the portal to ask and answer.</p>
+        <div class="comm-actions">
+          <a class="btn btn-primary" href="pilot.html" data-i18n="cta_portal">Sign in to the portal</a>
+          <a class="btn btn-ghost" href="community-terms.html" data-i18n="cta_community_tos">Read community terms</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <h2 data-i18n="comm_what_h">What this is</h2>
+        <p class="section-lead" data-i18n="comm_what_p">Amastan Community is Q&amp;A for product questions, air-gapped / license operations, and feature requests. Threads live in the signed-in Amastan SaaS portal (customers and partners). This marketing site publishes the rules and legal pages only. It does not host posts.</p>
+        <div class="grid-3" style="margin-top:1.25rem">
+          <article class="card">
+            <h3 data-i18n="comm_read_h">This website is the rulebook</h3>
+            <p data-i18n="comm_read_p">Anyone may read the rules here. Asking and answering requires a signed-in customer or partner account. There is no anonymous posting and no email-to-post on this site.</p>
+          </article>
+          <article class="card">
+            <h3 data-i18n="comm_format_h">Text, Markdown, and code only</h3>
+            <p data-i18n="comm_format_p">Amastan Community does not offer attachments or images. Do not post screenshots of appliances, packet captures, internal URLs, personal data, or license keys. Do not share DLP regular expressions — ever.</p>
+          </article>
+          <article class="card">
+            <h3 data-i18n="comm_not_h">What this is not</h3>
+            <ul class="learn-list">
+              <li data-i18n="comm_not_1">Not a public internet forum and not GitHub</li>
+              <li data-i18n="comm_not_2">Not a cloud Secure Web Gateway</li>
+              <li data-i18n="comm_not_3">Not appliance SSO</li>
+              <li data-i18n="comm_not_4">Not a place to paste production config or secrets</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <h2 data-i18n="comm_post_h">How to participate</h2>
+        <p class="section-lead" data-i18n="comm_post_lead">Accept the terms first. Then sign in to the Amastan customer or partner portal — we do not embed a post editor on this website.</p>
+        <div class="steps" style="margin-top:1rem">
+          <div class="step"><b>1</b><span data-i18n="comm_post_1">Read the Community terms. Posting in the portal means you accept them.</span></div>
+          <div class="step"><b>2</b><span data-i18n="comm_post_2">Sign in to the customer or partner portal Amastan issued you.</span></div>
+          <div class="step"><b>3</b><span data-i18n="comm_post_3">Write in text, Markdown, and code only. Do not attach images as a matter of Amastan policy.</span></div>
+          <div class="step"><b>4</b><span data-i18n="comm_post_4">Use a product category: Product, Air-gap / license, or Feature request. Announcements are staff-only.</span></div>
+        </div>
+        <p class="compare-note" data-i18n="comm_portal_note">Need an account? Request a pilot. Existing customers and partners use the portal they already have.</p>
+        <div class="comm-actions">
+          <a class="btn btn-primary" href="pilot.html" data-i18n="cta_portal">Sign in to the portal</a>
+        </div>
+        <p class="comm-ext-links">
+          <a href="community-terms.html" data-i18n="nav_community_tos">Community terms</a>
+          <span aria-hidden="true">·</span>
+          <a href="dmca.html" data-i18n="nav_dmca">DMCA</a>
+          <span aria-hidden="true">·</span>
+          <a href="pilot.html" data-i18n="cta_pilot">Request a pilot</a>
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <h2 data-i18n="comm_cat_h">Categories</h2>
+        <p class="section-lead" data-i18n="comm_cat_lead">Portal Q&amp;A. Billing stays in support; partner-confidential matters stay in the partner workspace.</p>
+        <div class="grid-3" style="margin-top:1.25rem">
+          <article class="card">
+            <h3 data-i18n="comm_cat_product_t">Product</h3>
+            <p data-i18n="comm_cat_product_d">How the self-hosted AI-SWG works, operators, deployments, and product questions.</p>
+          </article>
+          <article class="card">
+            <h3 data-i18n="comm_cat_airgap_t">Air-gap / license</h3>
+            <p data-i18n="comm_cat_airgap_d">Offline, air-gapped, and license operations that do not require exposing secrets.</p>
+          </article>
+          <article class="card">
+            <h3 data-i18n="comm_cat_feat_t">Feature request</h3>
+            <p data-i18n="comm_cat_feat_d">Ideas for the product. Not a support ticket and not an SLA.</p>
+          </article>
+          <article class="card">
+            <h3 data-i18n="comm_cat_announce_t">Announcements</h3>
+            <p data-i18n="comm_cat_announce_d">Staff posts only. Signed-in customers and partners may read.</p>
+          </article>
+          <article class="card">
+            <h3 data-i18n="comm_cat_off_t">Not in shared Q&amp;A</h3>
+            <p data-i18n="comm_cat_off_d">Billing and partner-confidential topics stay in support or the partner workspace. Use the pilot or contact form if you do not have portal access — do not post invoices, tenant identifiers, or partner contracts in Community.</p>
+            <p><a href="pilot.html" data-i18n="cta_pilot">Request a pilot</a></p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="never-callout">
+          <h2 data-i18n="comm_never_h">Never post</h2>
+          <p data-i18n="comm_never_lead">If it would help an attacker or expose a customer environment, do not paste it. This list is mandatory on Community and in the terms.</p>
+          <ul class="never-list">
+            <li data-i18n="comm_never_1">Appliance tokens</li>
+            <li data-i18n="comm_never_2">HMAC intake keys</li>
+            <li data-i18n="comm_never_3">Stripe IDs</li>
+            <li data-i18n="comm_never_4">Internal IP addresses</li>
+            <li data-i18n="comm_never_5">Packet captures (pcaps)</li>
+            <li data-i18n="comm_never_6">DLP regular expressions (never share, including “examples”)</li>
+            <li data-i18n="comm_never_7">Policy plaintext</li>
+            <li data-i18n="comm_never_8">Employee directories</li>
+            <li data-i18n="comm_never_9">RBI sessions</li>
+            <li data-i18n="comm_never_10">Prompts or completions</li>
+            <li data-i18n="comm_never_11">Other-tenant data</li>
+            <li data-i18n="comm_never_12">Embargoed vulnerabilities</li>
+            <li data-i18n="comm_never_13">Screenshots of appliances, pcaps, URLs, personal data, or license keys</li>
+          </ul>
+        </div>
+        <h2 data-i18n="comm_legal_h">Terms, license, and reports</h2>
+        <p class="section-lead" data-i18n="comm_legal_p">You must accept the Community terms (including the content license) before your first post. Copyright and illegal-content reports: use the DMCA page. Privacy requests: email staff.</p>
+        <p class="comm-ext-links">
+          <a href="community-terms.html" data-i18n="nav_community_tos">Community terms</a>
+          <span aria-hidden="true">·</span>
+          <a href="dmca.html" data-i18n="nav_dmca">DMCA</a>
+          <span aria-hidden="true">·</span>
+          <a href="privacy.html" data-i18n="nav_privacy">Privacy</a>
+          <span aria-hidden="true">·</span>
+          <a href="mailto:kabdi.kalboddine@gmail.com" data-i18n="comm_staff_email_label">Contact staff</a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>
+        <a class="brand footer-brand" href="index.html"><img class="brand-mark brand-mark-on-dark" src="assets/brand/logo-mark.png" alt="" width="40" height="47" /><img class="brand-mark brand-mark-on-light" src="assets/brand/logo-outline.png" alt="" width="40" height="46" /><span class="brand-text">Amastan</span><span class="brand-badge">AI-SWG</span></a>
+        <p class="footer-tag" data-i18n="footer_tag">Self-hosted AI Secure Web Gateway</p>
+      </div>
+      <div>
+        <h4 data-i18n="footer_hq_label">Headquarters</h4>
+        <p data-i18n="footer_hq">Algiers, Algeria</p>
+      </div>
+      <div>
+        <h4 data-i18n="footer_contact_label">Contact</h4>
+        <p><a href="tel:+213660617078">+213 660 61 70 78</a></p>
+        <p><a href="mailto:kabdi.kalboddine@gmail.com">kabdi.kalboddine@gmail.com</a></p>
+      </div>
+      <div>
+        <h4 data-i18n="footer_links_label">Links</h4>
+        <div class="footer-links">
+          <a href="check-url.html" data-i18n="nav_check">Check URL</a>
+          <a href="urls-checked.html" data-i18n="nav_checked">Checked</a>
+          <a href="pilot.html" data-i18n="nav_pilot">Pilot</a>
+          <a href="community.html" data-i18n="nav_community" aria-current="page">Community</a>
+          <a href="about.html" data-i18n="nav_about">About</a>
+          <a href="what-is-swg.html" data-i18n="nav_learn">What is SWG</a>
+          <a href="community-terms.html" data-i18n="nav_community_tos">Community terms</a>
+          <a href="privacy.html" data-i18n="nav_privacy">Privacy</a>
+          <a href="dmca.html" data-i18n="nav_dmca">DMCA</a>
+        </div>
+      </div>
+    </div>
+    <div class="wrap footer-copy">
+      <p>© 2026 Amastan. <span data-i18n="footer_rights">All rights reserved.</span></p>
+    </div>
+  </footer>
+  <script src="app.js?v=comm2"></script>
+</body>
+</html>

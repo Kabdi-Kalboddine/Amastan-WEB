@@ -41,6 +41,21 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://amastansolution.com/community</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://amastansolution.com/community-terms</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://amastansolution.com/dmca</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
     <loc>https://amastansolution.com/privacy</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
