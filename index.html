@@ -4,36 +4,45 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Amastan — Self-hosted AI Secure Web Gateway</title>
-  <meta name="description" content="Self-hosted AI SWG — allow / block / RBI, with verdicts and logs on your infrastructure." />
+  <meta name="description" content="Web filter you run yourself — allow, block, or open risky sites safely. Decisions and logs stay on your servers." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://amastansolution.com/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Amastan" />
   <meta property="og:title" content="Amastan — Self-hosted AI Secure Web Gateway" />
-  <meta property="og:description" content="Self-hosted AI SWG — allow / block / RBI, with verdicts and logs on your infrastructure." />
+  <meta property="og:description" content="Web filter you run yourself — allow, block, or open risky sites safely. Decisions and logs stay on your servers." />
   <meta property="og:url" content="https://amastansolution.com/" />
   <meta property="og:image" content="https://amastansolution.com/assets/brand/logo-mark.png" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Amastan — Self-hosted AI Secure Web Gateway" />
-  <meta name="twitter:description" content="Self-hosted AI SWG — allow / block / RBI, with verdicts and logs on your infrastructure." />
+  <meta name="twitter:description" content="Web filter you run yourself — allow, block, or open risky sites safely. Decisions and logs stay on your servers." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="icon" href="assets/brand/logo-mark.png" type="image/png" />
-  <link rel="stylesheet" href="styles.css?v=respage1" />
+  <link rel="stylesheet" href="styles.css?v=sale1" />
   <script>
     (function () {
       var t = localStorage.getItem("amastan_theme") || "dark";
       document.documentElement.setAttribute("data-theme", t === "light" ? "light" : "dark");
-      var h = location.hash;
-      if (h === "#resources" || h === "#downloads") {
-        location.replace("resources.html" + h);
-      }
     })();
   </script>
 
 </head>
 <body>
+  <aside class="sale-banner" role="note" aria-label="Acquisition notice">
+    <div class="wrap sale-banner-inner">
+      <p class="sale-banner-text">
+        <span class="sale-pill" data-i18n="sale_pill">For sale</span>
+        <span data-i18n="sale_lead">Amastan AI-SWG (product, IP, and brand) is available for acquisition.</span>
+      </p>
+      <div class="sale-banner-actions">
+        <a class="btn btn-primary sale-cta" href="mailto:kabdi.kalboddine@gmail.com?subject=Amastan%20acquisition%20inquiry" data-i18n="sale_cta">Inquire about acquisition</a>
+        <!-- Paste BuySellStartups free-listing badge embed here after they email the code -->
+        <div id="bss-for-sale-badge" class="bss-badge-slot" hidden></div>
+      </div>
+    </div>
+  </aside>
   <header class="topbar">
     <div class="nav-backdrop" id="nav-backdrop" hidden></div>
     <div class="wrap topbar-inner">
@@ -42,12 +51,12 @@
         <a href="use-cases.html" data-i18n="nav_usecases">Use cases</a>
         <a href="pilot.html" data-i18n="nav_pilot">Pilot</a>
         <a href="features.html" data-i18n="nav_features">Features</a>
+        <a href="capacity.html" data-i18n="nav_capacity">Team sizes</a>
         <a href="what-is-swg.html" data-i18n="nav_learn">What is SWG</a>
         <a href="check-url.html" data-i18n="nav_check">Check URL</a>
         <a href="urls-checked.html" data-i18n="nav_checked">Checked</a>
         <a href="about.html" data-i18n="nav_about">About</a>
-        <a href="resources.html" data-i18n="nav_downloads">Resources</a>
-        <a href="community.html" data-i18n="nav_community">Community</a>
+        <a href="#downloads" data-i18n="nav_downloads">Downloads</a>
         <a href="#contact" data-i18n="nav_contact">Contact</a>
         <a class="btn btn-primary nav-cta" href="pilot.html" data-i18n="cta_pilot">Request a pilot</a>
       </nav>
@@ -144,10 +153,8 @@
         <h2 data-i18n="demo_title">See it in action</h2>
         <p class="section-lead" data-i18n="demo_lead"></p>
         <div class="video-frame">
-          <video class="film-player" controls preload="metadata" playsinline poster="assets/video/amastan-film-poster.jpg">
-            <source src="assets/video/amastan-film.mp4" type="video/mp4" />
-            <track kind="subtitles" srclang="fr" label="Français" src="assets/video/amastan-film.fr.vtt" default />
-            <track kind="subtitles" srclang="en" label="English" src="assets/video/amastan-film.en.vtt" />
+          <video controls preload="metadata" playsinline poster="assets/screens/01-dashboard.png">
+            <source src="assets/video/amastan-demo.mp4" type="video/mp4" />
           </video>
         </div>
         <h3 class="road-h" data-i18n="shots_title">Operator console</h3>
@@ -253,6 +260,45 @@
       </div>
     </section>
 
+    <section class="section" id="downloads">
+      <div class="wrap">
+        <h2 data-i18n="dl_title">Downloads</h2>
+        <p class="section-lead" data-i18n="dl_lead"></p>
+        <div class="dl-grid">
+          <article class="card dl-card">
+            <span class="badge">CISO</span>
+            <h3 data-i18n="dl_ciso"></h3>
+            <p class="meta" data-i18n="dl_ciso_d"></p>
+            <a class="btn btn-primary" href="downloads/Amastan-AI-SWG-CISO-One-Pager.html" target="_blank" rel="noopener" data-i18n="dl_view">Open</a>
+          </article>
+          <article class="card dl-card">
+            <span class="badge">PDF</span>
+            <h3 data-i18n="dl_user"></h3>
+            <p class="meta" data-i18n="dl_user_d"></p>
+            <a class="btn btn-primary" href="downloads/Amastan-AI-SWG-User-Guide.pdf" download data-i18n="dl_open">Download</a>
+          </article>
+          <article class="card dl-card">
+            <span class="badge">HTML</span>
+            <h3 data-i18n="dl_admin"></h3>
+            <p class="meta" data-i18n="dl_admin_d"></p>
+            <a class="btn btn-primary" href="downloads/Amastan-AI-SWG-Admin-Guide.html" target="_blank" rel="noopener" data-i18n="dl_view">Open</a>
+          </article>
+          <article class="card dl-card">
+            <span class="badge">HTML</span>
+            <h3 data-i18n="dl_specs"></h3>
+            <p class="meta" data-i18n="dl_specs_d"></p>
+            <a class="btn btn-primary" href="downloads/Amastan-AI-SWG-System-Specifications.html" target="_blank" rel="noopener" data-i18n="dl_view">Open</a>
+          </article>
+          <article class="card dl-card">
+            <span class="badge">qcow2</span>
+            <h3 data-i18n="dl_vm"></h3>
+            <p class="meta" data-i18n="dl_vm_d"></p>
+            <a class="btn btn-primary" href="#contact" id="vm-request" data-i18n="dl_vm_btn">Request by email</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section class="section" id="contact">
       <div class="wrap">
         <h2 data-i18n="contact_title">Request a pilot</h2>
@@ -264,17 +310,6 @@
             <label><span data-i18n="f_email"></span><input name="email" type="email" required autocomplete="email" /></label>
             <label><span data-i18n="f_company"></span><input name="company" autocomplete="organization" /></label>
             <label><span data-i18n="f_country"></span><input name="country" autocomplete="country-name" /></label>
-            <label><span data-i18n="f_interest"></span>
-              <select name="interest">
-                <option value="pilot" selected data-i18n="f_interest_pilot"></option>
-                <option value="vm" data-i18n="f_interest_vm"></option>
-                <option value="compute" data-i18n="f_interest_compute"></option>
-                <option value="support" data-i18n="f_interest_support"></option>
-                <option value="partner" data-i18n="f_interest_partner"></option>
-                <option value="feature" data-i18n="f_interest_features"></option>
-                <option value="other" data-i18n="f_interest_other"></option>
-              </select>
-            </label>
             <label><span data-i18n="f_message"></span><textarea name="message" rows="5" maxlength="5000"></textarea></label>
             <p class="form-privacy"><a href="privacy.html" data-i18n="f_privacy_link">Privacy notice</a> — <span data-i18n="f_mail_note"></span></p>
             <button class="btn btn-primary" type="submit" data-i18n="f_submit">Request a pilot</button>
@@ -310,13 +345,11 @@
         <div class="footer-links">
           <a href="check-url.html" data-i18n="nav_check">Check URL</a>
           <a href="urls-checked.html" data-i18n="nav_checked">Checked</a>
+          <a href="capacity.html" data-i18n="nav_capacity">Team sizes</a>
           <a href="pilot.html" data-i18n="nav_pilot">Pilot</a>
-          <a href="community.html" data-i18n="nav_community">Community</a>
           <a href="about.html" data-i18n="nav_about">About</a>
           <a href="what-is-swg.html" data-i18n="nav_learn">What is SWG</a>
-          <a href="community-terms.html" data-i18n="nav_community_tos">Community terms</a>
           <a href="privacy.html" data-i18n="nav_privacy">Privacy</a>
-          <a href="dmca.html" data-i18n="nav_dmca">DMCA</a>
         </div>
       </div>
     </div>
@@ -334,6 +367,6 @@
     </div>
   </div>
 
-  <script src="app.js?v=intake1"></script>
+  <script src="app.js?v=sale1"></script>
 </body>
 </html>
