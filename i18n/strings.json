@@ -745,10 +745,7 @@
     "fn_15_t": "One investigation case (start)",
     "fn_15_d": "Cases can join person, PC, website, and file clues into one incident story on the appliance. Full SOC one-screen UX is still deepening — we do not replace laptop EDR or put a CRM on the box.",
     "fn_16_t": "Readiness / honesty doctor",
-    "fn_16_d": "An operator view that states what is ready, what is detect-only, and what is not configured — so demos stay honest instead of claiming “fully secure.”",
-    "sale_pill": "For sale",
-    "sale_lead": "Amastan AI-SWG (product, IP, and brand) is available for acquisition. Serious buyers: NDA + live lab demo.",
-    "sale_cta": "Inquire about acquisition"
+    "fn_16_d": "An operator view that states what is ready, what is detect-only, and what is not configured — so demos stay honest instead of claiming “fully secure.”"
   },
   "fr": {
     "nav_about": "À propos",
@@ -1496,10 +1493,7 @@
     "fn_15_t": "Un dossier d’enquête (début)",
     "fn_15_d": "Les dossiers peuvent relier personne, PC, site et fichier en une histoire. L’UX SOC complète approfondit encore — pas un EDR PC ni un CRM sur la boîte.",
     "fn_16_t": "Doctor honnêteté / readiness",
-    "fn_16_d": "Une vue opérateur qui dit ce qui est prêt, detect-only, ou non configuré — pour des démos honnêtes, sans « Fully secure ».",
-    "sale_pill": "À vendre",
-    "sale_lead": "Amastan AI-SWG (produit, IP et marque) est disponible à l’acquisition. Acheteurs sérieux : NDA + démo lab.",
-    "sale_cta": "Demande d’acquisition"
+    "fn_16_d": "Une vue opérateur qui dit ce qui est prêt, detect-only, ou non configuré — pour des démos honnêtes, sans « Fully secure »."
   },
   "ar": {
     "nav_about": "حول",
@@ -2247,9 +2241,6 @@
     "fn_15_t": "قضية تحقيق واحدة (بداية)",
     "fn_15_d": "يمكن للقضايا ربط الشخص والحاسوب والموقع والملف في قصة واحدة على الجهاز. واجهة SOC الكاملة ما زالت تتعمق — لا نستبدل EDR الحاسوب ولا نضع CRM على الصندوق.",
     "fn_16_t": "طبيب الجاهزية / الصدق",
-    "fn_16_d": "عرض للمشغّل يوضح ما هو جاهز وما هو detect-only وما هو غير مضبوط — حتى تبقى العروض صادقة دون ادعاء «Fully secure».",
-    "sale_pill": "للبيع",
-    "sale_lead": "Amastan AI-SWG (المنتج والملكية الفكرية والعلامة) متاح للاستحواذ. للمشترين الجادين: NDA + عرض مختبر.",
-    "sale_cta": "استفسار عن الاستحواذ"
+    "fn_16_d": "عرض للمشغّل يوضح ما هو جاهز وما هو detect-only وما هو غير مضبوط — حتى تبقى العروض صادقة دون ادعاء «Fully secure»."
   }
 }

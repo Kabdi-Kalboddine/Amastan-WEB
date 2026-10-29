@@ -348,65 +348,6 @@ body.nav-open .nav-toggle-bars span:nth-child(3) {
 }
 
 
-/* ——— Acquisition / for-sale banner ——— */
-.sale-banner {
-  background: linear-gradient(90deg, rgba(0, 117, 253, 0.14), rgba(11, 20, 64, 0.55));
-  border-bottom: 1px solid var(--line-soft);
-  padding: 0.65rem 0;
-}
-[data-theme="light"] .sale-banner {
-  background: linear-gradient(90deg, rgba(0, 117, 253, 0.1), rgba(0, 117, 253, 0.04));
-}
-.sale-banner-inner {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.75rem 1.25rem;
-}
-.sale-banner-text {
-  margin: 0;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.55rem 0.75rem;
-  color: var(--text);
-  font-size: 0.92rem;
-  line-height: 1.4;
-  max-width: 48rem;
-}
-.sale-pill {
-  display: inline-flex;
-  align-items: center;
-  padding: 0.2rem 0.55rem;
-  border-radius: 999px;
-  font-size: 0.72rem;
-  font-weight: 750;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: #fff;
-  background: var(--royal, #0075fd);
-  flex: 0 0 auto;
-}
-.sale-banner-actions {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.65rem;
-}
-.sale-cta {
-  padding: 0.45rem 0.9rem;
-  font-size: 0.84rem;
-}
-.bss-badge-slot:not([hidden]) {
-  display: inline-flex;
-  align-items: center;
-}
-.bss-badge-slot a,
-.bss-badge-slot img {
-  max-height: 2rem;
-}
-
 /* ——— Hero ——— */
 .hero {
   padding: 4.25rem 0 3.75rem;
