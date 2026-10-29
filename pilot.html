@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Amastan — Lab pilot (Pilot RC1+)</title>
-  <meta name="description" content="4–6 week Amastan Pilot RC1+ lab pilot: prove allow, block, RBI, download scan, trap-page warn, and honesty/case views — with evidence your team can review." />
+  <meta name="description" content="4–6 week Amastan AI-SWG lab pilot: deploy, prove allow/block/RBI, review audit evidence." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet" />
@@ -39,12 +39,12 @@
         <a href="use-cases.html" data-i18n="nav_usecases">Use cases</a>
         <a href="pilot.html" data-i18n="nav_pilot">Pilot</a>
         <a href="features.html" data-i18n="nav_features">Features</a>
-        <a href="capacity.html" data-i18n="nav_capacity">Team sizes</a>
         <a href="what-is-swg.html" data-i18n="nav_learn">What is SWG</a>
         <a href="check-url.html" data-i18n="nav_check">Check URL</a>
         <a href="urls-checked.html" data-i18n="nav_checked">Checked</a>
         <a href="about.html" data-i18n="nav_about">About</a>
-        <a href="index.html#downloads" data-i18n="nav_downloads">Downloads</a>
+        <a href="resources.html" data-i18n="nav_downloads">Resources</a>
+        <a href="community.html" data-i18n="nav_community">Community</a>
         <a href="#request" data-i18n="nav_contact">Contact</a>
         <a class="btn btn-primary nav-cta" href="#request" data-i18n="cta_pilot">Request a pilot</a>
       </nav>
@@ -70,8 +70,8 @@
     <section class="hero page-hero">
       <div class="wrap">
         <p class="kicker" data-i18n="pilot_kicker">Pilot offer</p>
-        <h1 data-i18n="pilot_title">4–6 week lab pilot (Pilot RC1+)</h1>
-        <p class="lead" data-i18n="pilot_lead">Prove allow, block, RBI, download scan, trap-page warn, and case/honesty views on your traffic — with evidence your team can review.</p>
+        <h1 data-i18n="pilot_title">4–6 week lab pilot</h1>
+        <p class="lead" data-i18n="pilot_lead">Prove self-hosted allow / block / RBI on your traffic — with operator workflows and audit evidence your team can review.</p>
         <div class="actions">
           <a class="btn btn-primary" href="#request" data-i18n="cta_pilot">Request a pilot</a>
           <a class="btn btn-ghost" href="index.html#demo" data-i18n="cta_watch">Watch demo</a>
@@ -127,6 +127,17 @@
             <label><span data-i18n="f_email"></span><input name="email" type="email" required autocomplete="email" /></label>
             <label><span data-i18n="f_company"></span><input name="company" autocomplete="organization" /></label>
             <label><span data-i18n="f_country"></span><input name="country" autocomplete="country-name" /></label>
+            <label><span data-i18n="f_interest"></span>
+              <select name="interest">
+                <option value="pilot" selected data-i18n="f_interest_pilot"></option>
+                <option value="vm" data-i18n="f_interest_vm"></option>
+                <option value="compute" data-i18n="f_interest_compute"></option>
+                <option value="support" data-i18n="f_interest_support"></option>
+                <option value="partner" data-i18n="f_interest_partner"></option>
+                <option value="feature" data-i18n="f_interest_features"></option>
+                <option value="other" data-i18n="f_interest_other"></option>
+              </select>
+            </label>
             <label><span data-i18n="f_message"></span><textarea name="message" rows="5" maxlength="5000"></textarea></label>
             <p class="form-privacy"><a href="privacy.html" data-i18n="f_privacy_link">Privacy notice</a> — <span data-i18n="f_mail_note"></span></p>
             <button class="btn btn-primary" type="submit" data-i18n="f_submit">Request a pilot</button>
@@ -161,11 +172,13 @@
         <div class="footer-links">
           <a href="check-url.html" data-i18n="nav_check">Check URL</a>
           <a href="urls-checked.html" data-i18n="nav_checked">Checked</a>
-          <a href="capacity.html" data-i18n="nav_capacity">Team sizes</a>
           <a href="pilot.html" data-i18n="nav_pilot">Pilot</a>
+          <a href="community.html" data-i18n="nav_community">Community</a>
           <a href="about.html" data-i18n="nav_about">About</a>
           <a href="what-is-swg.html" data-i18n="nav_learn">What is SWG</a>
+          <a href="community-terms.html" data-i18n="nav_community_tos">Community terms</a>
           <a href="privacy.html" data-i18n="nav_privacy">Privacy</a>
+          <a href="dmca.html" data-i18n="nav_dmca">DMCA</a>
         </div>
       </div>
     </div>
@@ -173,6 +186,6 @@
       <p>© 2026 Amastan. <span data-i18n="footer_rights">All rights reserved.</span></p>
     </div>
   </footer>
-  <script src="app.js?v=sale1"></script>
+  <script src="app.js?v=intake1"></script>
 </body>
 </html>
